@@ -1,0 +1,251 @@
+2024-03-19 13:55:09,065 P2061813 INFO Params: {
+    "alpha": "0.15",
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "c": "1.0",
+    "data_format": "h5",
+    "data_root": "../../../data/",
+    "dataset_id": "KKBox_x1_h5",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "easy_hidden_units": "[400, 400]",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.0005",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'str', 'name': ['msno', 'song_id', 'source_system_tab', 'source_screen_name', 'source_type', 'city', 'gender', 'registered_via', 'language'], 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'encoder': 'MaskedSumPooling', 'max_len': 3, 'name': 'genre_ids', 'type': 'sequence'}, {'active': True, 'dtype': 'str', 'encoder': 'MaskedSumPooling', 'max_len': 3, 'name': 'artist_name', 'type': 'sequence'}, {'active': True, 'dtype': 'str', 'name': 'isrc', 'preprocess': 'extract_country_code', 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'name': 'bd', 'preprocess': 'bucketize_age', 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gamma": "1",
+    "gpu": "0",
+    "group_id": "None",
+    "hard_hidden_units": "[400, 400, 400]",
+    "hidden_activations": "relu",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "2",
+    "model": "TF4CTR",
+    "model_id": "TF4CTR_KKBox_031_0e2e39da",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_workers": "6",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2024",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/KKBox_x1_h5/test.h5",
+    "train_data": "../../../data/KKBox_x1_h5/train.h5",
+    "use_features": "None",
+    "valid_data": "../../../data/KKBox_x1_h5/valid.h5",
+    "verbose": "1"
+}
+2024-03-19 13:55:09,066 P2061813 INFO Load feature_map from json: ../../../data/KKBox_x1_h5/feature_map.json
+2024-03-19 13:55:09,066 P2061813 INFO Set column index...
+2024-03-19 13:55:09,066 P2061813 INFO Feature specs: {
+    "artist_name": "{'source': '', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'oov_idx': 25368, 'vocab_size': 25369, 'max_len': 3}",
+    "bd": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "city": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "genre_ids": "{'source': '', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'oov_idx': 482, 'vocab_size': 483, 'max_len': 3}",
+    "isrc": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 96, 'vocab_size': 97}",
+    "language": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 11, 'vocab_size': 12}",
+    "msno": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 29505, 'vocab_size': 29506}",
+    "registered_via": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "song_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 172296, 'vocab_size': 172297}",
+    "source_screen_name": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 21, 'vocab_size': 22}",
+    "source_system_tab": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 9, 'vocab_size': 10}",
+    "source_type": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 13, 'vocab_size': 14}"
+}
+2024-03-19 13:55:14,177 P2061813 INFO Total number of parameters: 4298852.
+2024-03-19 13:55:14,177 P2061813 INFO Loading data...
+2024-03-19 13:55:14,178 P2061813 INFO Loading data from h5: ../../../data/KKBox_x1_h5/train.h5
+2024-03-19 13:55:15,667 P2061813 INFO Train samples: total/5901932, blocks/1
+2024-03-19 13:55:15,668 P2061813 INFO Loading data from h5: ../../../data/KKBox_x1_h5/valid.h5
+2024-03-19 13:55:15,852 P2061813 INFO Validation samples: total/737743, blocks/1
+2024-03-19 13:55:15,852 P2061813 INFO Loading train and validation data done.
+2024-03-19 13:55:15,852 P2061813 INFO Start training: 591 batches/epoch
+2024-03-19 13:55:15,852 P2061813 INFO ************ Epoch=1 start ************
+2024-03-19 13:55:38,011 P2061813 INFO Train loss: 0.952220
+2024-03-19 13:55:38,011 P2061813 INFO Evaluation @epoch 1 - batch 591: 
+2024-03-19 13:55:41,475 P2061813 INFO ===
+2024-03-19 13:55:41,475 P2061813 INFO [Metrics] AUC: 0.806896 - logloss: 0.533383
+2024-03-19 13:55:41,478 P2061813 INFO Save best model: monitor(max)=0.806896
+2024-03-19 13:55:41,637 P2061813 INFO ************ Epoch=1 end ************
+2024-03-19 13:56:02,851 P2061813 INFO Train loss: 0.904931
+2024-03-19 13:56:02,851 P2061813 INFO Evaluation @epoch 2 - batch 591: 
+2024-03-19 13:56:05,969 P2061813 INFO ===
+2024-03-19 13:56:05,970 P2061813 INFO [Metrics] AUC: 0.817471 - logloss: 0.521352
+2024-03-19 13:56:05,973 P2061813 INFO Save best model: monitor(max)=0.817471
+2024-03-19 13:56:06,190 P2061813 INFO ************ Epoch=2 end ************
+2024-03-19 13:56:26,077 P2061813 INFO Train loss: 0.896428
+2024-03-19 13:56:26,077 P2061813 INFO Evaluation @epoch 3 - batch 591: 
+2024-03-19 13:56:29,917 P2061813 INFO ===
+2024-03-19 13:56:29,917 P2061813 INFO [Metrics] AUC: 0.822796 - logloss: 0.514907
+2024-03-19 13:56:29,921 P2061813 INFO Save best model: monitor(max)=0.822796
+2024-03-19 13:56:30,249 P2061813 INFO ************ Epoch=3 end ************
+2024-03-19 13:56:52,344 P2061813 INFO Train loss: 0.891915
+2024-03-19 13:56:52,345 P2061813 INFO Evaluation @epoch 4 - batch 591: 
+2024-03-19 13:56:56,753 P2061813 INFO ===
+2024-03-19 13:56:56,753 P2061813 INFO [Metrics] AUC: 0.825133 - logloss: 0.511843
+2024-03-19 13:56:56,760 P2061813 INFO Save best model: monitor(max)=0.825133
+2024-03-19 13:56:57,070 P2061813 INFO ************ Epoch=4 end ************
+2024-03-19 13:57:21,401 P2061813 INFO Train loss: 0.888984
+2024-03-19 13:57:21,402 P2061813 INFO Evaluation @epoch 5 - batch 591: 
+2024-03-19 13:57:25,577 P2061813 INFO ===
+2024-03-19 13:57:25,578 P2061813 INFO [Metrics] AUC: 0.826756 - logloss: 0.509896
+2024-03-19 13:57:25,583 P2061813 INFO Save best model: monitor(max)=0.826756
+2024-03-19 13:57:25,882 P2061813 INFO ************ Epoch=5 end ************
+2024-03-19 13:57:49,739 P2061813 INFO Train loss: 0.886427
+2024-03-19 13:57:49,739 P2061813 INFO Evaluation @epoch 6 - batch 591: 
+2024-03-19 13:57:52,332 P2061813 INFO ===
+2024-03-19 13:57:52,333 P2061813 INFO [Metrics] AUC: 0.828227 - logloss: 0.508345
+2024-03-19 13:57:52,336 P2061813 INFO Save best model: monitor(max)=0.828227
+2024-03-19 13:57:52,510 P2061813 INFO ************ Epoch=6 end ************
+2024-03-19 13:58:12,641 P2061813 INFO Train loss: 0.884526
+2024-03-19 13:58:12,641 P2061813 INFO Evaluation @epoch 7 - batch 591: 
+2024-03-19 13:58:16,225 P2061813 INFO ===
+2024-03-19 13:58:16,226 P2061813 INFO [Metrics] AUC: 0.828862 - logloss: 0.507385
+2024-03-19 13:58:16,229 P2061813 INFO Save best model: monitor(max)=0.828862
+2024-03-19 13:58:16,480 P2061813 INFO ************ Epoch=7 end ************
+2024-03-19 13:58:37,327 P2061813 INFO Train loss: 0.882645
+2024-03-19 13:58:37,327 P2061813 INFO Evaluation @epoch 8 - batch 591: 
+2024-03-19 13:58:41,164 P2061813 INFO ===
+2024-03-19 13:58:41,165 P2061813 INFO [Metrics] AUC: 0.830464 - logloss: 0.505369
+2024-03-19 13:58:41,171 P2061813 INFO Save best model: monitor(max)=0.830464
+2024-03-19 13:58:41,486 P2061813 INFO ************ Epoch=8 end ************
+2024-03-19 13:59:04,569 P2061813 INFO Train loss: 0.880938
+2024-03-19 13:59:04,569 P2061813 INFO Evaluation @epoch 9 - batch 591: 
+2024-03-19 13:59:08,227 P2061813 INFO ===
+2024-03-19 13:59:08,227 P2061813 INFO [Metrics] AUC: 0.830994 - logloss: 0.504555
+2024-03-19 13:59:08,233 P2061813 INFO Save best model: monitor(max)=0.830994
+2024-03-19 13:59:08,537 P2061813 INFO ************ Epoch=9 end ************
+2024-03-19 13:59:32,345 P2061813 INFO Train loss: 0.879397
+2024-03-19 13:59:32,345 P2061813 INFO Evaluation @epoch 10 - batch 591: 
+2024-03-19 13:59:36,353 P2061813 INFO ===
+2024-03-19 13:59:36,354 P2061813 INFO [Metrics] AUC: 0.831620 - logloss: 0.503705
+2024-03-19 13:59:36,360 P2061813 INFO Save best model: monitor(max)=0.831620
+2024-03-19 13:59:36,684 P2061813 INFO ************ Epoch=10 end ************
+2024-03-19 14:00:00,153 P2061813 INFO Train loss: 0.877814
+2024-03-19 14:00:00,154 P2061813 INFO Evaluation @epoch 11 - batch 591: 
+2024-03-19 14:00:03,953 P2061813 INFO ===
+2024-03-19 14:00:03,954 P2061813 INFO [Metrics] AUC: 0.831686 - logloss: 0.503751
+2024-03-19 14:00:03,959 P2061813 INFO Save best model: monitor(max)=0.831686
+2024-03-19 14:00:04,269 P2061813 INFO ************ Epoch=11 end ************
+2024-03-19 14:00:28,445 P2061813 INFO Train loss: 0.876535
+2024-03-19 14:00:28,445 P2061813 INFO Evaluation @epoch 12 - batch 591: 
+2024-03-19 14:00:32,067 P2061813 INFO ===
+2024-03-19 14:00:32,067 P2061813 INFO [Metrics] AUC: 0.832506 - logloss: 0.502849
+2024-03-19 14:00:32,070 P2061813 INFO Save best model: monitor(max)=0.832506
+2024-03-19 14:00:32,300 P2061813 INFO ************ Epoch=12 end ************
+2024-03-19 14:00:56,067 P2061813 INFO Train loss: 0.875066
+2024-03-19 14:00:56,067 P2061813 INFO Evaluation @epoch 13 - batch 591: 
+2024-03-19 14:00:59,598 P2061813 INFO ===
+2024-03-19 14:00:59,598 P2061813 INFO [Metrics] AUC: 0.832967 - logloss: 0.502095
+2024-03-19 14:00:59,602 P2061813 INFO Save best model: monitor(max)=0.832967
+2024-03-19 14:00:59,875 P2061813 INFO ************ Epoch=13 end ************
+2024-03-19 14:01:23,855 P2061813 INFO Train loss: 0.873896
+2024-03-19 14:01:23,856 P2061813 INFO Evaluation @epoch 14 - batch 591: 
+2024-03-19 14:01:27,312 P2061813 INFO ===
+2024-03-19 14:01:27,312 P2061813 INFO [Metrics] AUC: 0.833006 - logloss: 0.502023
+2024-03-19 14:01:27,315 P2061813 INFO Save best model: monitor(max)=0.833006
+2024-03-19 14:01:27,585 P2061813 INFO ************ Epoch=14 end ************
+2024-03-19 14:01:51,420 P2061813 INFO Train loss: 0.872720
+2024-03-19 14:01:51,421 P2061813 INFO Evaluation @epoch 15 - batch 591: 
+2024-03-19 14:01:54,773 P2061813 INFO ===
+2024-03-19 14:01:54,773 P2061813 INFO [Metrics] AUC: 0.833114 - logloss: 0.501988
+2024-03-19 14:01:54,777 P2061813 INFO Save best model: monitor(max)=0.833114
+2024-03-19 14:01:55,005 P2061813 INFO ************ Epoch=15 end ************
+2024-03-19 14:02:16,239 P2061813 INFO Train loss: 0.871818
+2024-03-19 14:02:16,240 P2061813 INFO Evaluation @epoch 16 - batch 591: 
+2024-03-19 14:02:19,525 P2061813 INFO ===
+2024-03-19 14:02:19,525 P2061813 INFO [Metrics] AUC: 0.833815 - logloss: 0.501208
+2024-03-19 14:02:19,529 P2061813 INFO Save best model: monitor(max)=0.833815
+2024-03-19 14:02:19,750 P2061813 INFO ************ Epoch=16 end ************
+2024-03-19 14:02:41,454 P2061813 INFO Train loss: 0.870807
+2024-03-19 14:02:41,455 P2061813 INFO Evaluation @epoch 17 - batch 591: 
+2024-03-19 14:02:44,967 P2061813 INFO ===
+2024-03-19 14:02:44,967 P2061813 INFO [Metrics] AUC: 0.834141 - logloss: 0.500680
+2024-03-19 14:02:44,972 P2061813 INFO Save best model: monitor(max)=0.834141
+2024-03-19 14:02:45,243 P2061813 INFO ************ Epoch=17 end ************
+2024-03-19 14:03:07,429 P2061813 INFO Train loss: 0.869793
+2024-03-19 14:03:07,430 P2061813 INFO Evaluation @epoch 18 - batch 591: 
+2024-03-19 14:03:11,066 P2061813 INFO ===
+2024-03-19 14:03:11,067 P2061813 INFO [Metrics] AUC: 0.834629 - logloss: 0.500034
+2024-03-19 14:03:11,072 P2061813 INFO Save best model: monitor(max)=0.834629
+2024-03-19 14:03:11,370 P2061813 INFO ************ Epoch=18 end ************
+2024-03-19 14:03:35,212 P2061813 INFO Train loss: 0.869023
+2024-03-19 14:03:35,213 P2061813 INFO Evaluation @epoch 19 - batch 591: 
+2024-03-19 14:03:39,005 P2061813 INFO ===
+2024-03-19 14:03:39,005 P2061813 INFO [Metrics] AUC: 0.834844 - logloss: 0.499985
+2024-03-19 14:03:39,011 P2061813 INFO Save best model: monitor(max)=0.834844
+2024-03-19 14:03:39,299 P2061813 INFO ************ Epoch=19 end ************
+2024-03-19 14:04:04,325 P2061813 INFO Train loss: 0.868140
+2024-03-19 14:04:04,325 P2061813 INFO Evaluation @epoch 20 - batch 591: 
+2024-03-19 14:04:07,972 P2061813 INFO ===
+2024-03-19 14:04:07,972 P2061813 INFO [Metrics] AUC: 0.834917 - logloss: 0.499613
+2024-03-19 14:04:07,979 P2061813 INFO Save best model: monitor(max)=0.834917
+2024-03-19 14:04:08,262 P2061813 INFO ************ Epoch=20 end ************
+2024-03-19 14:04:33,851 P2061813 INFO Train loss: 0.867378
+2024-03-19 14:04:33,851 P2061813 INFO Evaluation @epoch 21 - batch 591: 
+2024-03-19 14:04:38,197 P2061813 INFO ===
+2024-03-19 14:04:38,197 P2061813 INFO [Metrics] AUC: 0.835384 - logloss: 0.499409
+2024-03-19 14:04:38,208 P2061813 INFO Save best model: monitor(max)=0.835384
+2024-03-19 14:04:38,570 P2061813 INFO ************ Epoch=21 end ************
+2024-03-19 14:05:02,485 P2061813 INFO Train loss: 0.866726
+2024-03-19 14:05:02,485 P2061813 INFO Evaluation @epoch 22 - batch 591: 
+2024-03-19 14:05:06,156 P2061813 INFO ===
+2024-03-19 14:05:06,157 P2061813 INFO [Metrics] AUC: 0.835705 - logloss: 0.498851
+2024-03-19 14:05:06,160 P2061813 INFO Save best model: monitor(max)=0.835705
+2024-03-19 14:05:06,404 P2061813 INFO ************ Epoch=22 end ************
+2024-03-19 14:05:33,017 P2061813 INFO Train loss: 0.866158
+2024-03-19 14:05:33,017 P2061813 INFO Evaluation @epoch 23 - batch 591: 
+2024-03-19 14:05:36,776 P2061813 INFO ===
+2024-03-19 14:05:36,776 P2061813 INFO [Metrics] AUC: 0.835690 - logloss: 0.498969
+2024-03-19 14:05:36,782 P2061813 INFO Monitor(max)=0.835690 STOP!
+2024-03-19 14:05:36,782 P2061813 INFO Reduce learning rate on plateau: 0.000100
+2024-03-19 14:05:36,978 P2061813 INFO ************ Epoch=23 end ************
+2024-03-19 14:06:06,555 P2061813 INFO Train loss: 0.794723
+2024-03-19 14:06:06,556 P2061813 INFO Evaluation @epoch 24 - batch 591: 
+2024-03-19 14:06:10,715 P2061813 INFO ===
+2024-03-19 14:06:10,715 P2061813 INFO [Metrics] AUC: 0.841940 - logloss: 0.495193
+2024-03-19 14:06:10,720 P2061813 INFO Save best model: monitor(max)=0.841940
+2024-03-19 14:06:11,106 P2061813 INFO ************ Epoch=24 end ************
+2024-03-19 14:06:41,186 P2061813 INFO Train loss: 0.761348
+2024-03-19 14:06:41,187 P2061813 INFO Evaluation @epoch 25 - batch 591: 
+2024-03-19 14:06:44,493 P2061813 INFO ===
+2024-03-19 14:06:44,494 P2061813 INFO [Metrics] AUC: 0.842704 - logloss: 0.496625
+2024-03-19 14:06:44,499 P2061813 INFO Save best model: monitor(max)=0.842704
+2024-03-19 14:06:44,842 P2061813 INFO ************ Epoch=25 end ************
+2024-03-19 14:07:14,861 P2061813 INFO Train loss: 0.742526
+2024-03-19 14:07:14,862 P2061813 INFO Evaluation @epoch 26 - batch 591: 
+2024-03-19 14:07:18,868 P2061813 INFO ===
+2024-03-19 14:07:18,868 P2061813 INFO [Metrics] AUC: 0.841777 - logloss: 0.500236
+2024-03-19 14:07:18,873 P2061813 INFO Monitor(max)=0.841777 STOP!
+2024-03-19 14:07:18,873 P2061813 INFO Reduce learning rate on plateau: 0.000010
+2024-03-19 14:07:19,052 P2061813 INFO ************ Epoch=26 end ************
+2024-03-19 14:07:49,241 P2061813 INFO Train loss: 0.711239
+2024-03-19 14:07:49,242 P2061813 INFO Evaluation @epoch 27 - batch 591: 
+2024-03-19 14:07:53,130 P2061813 INFO ===
+2024-03-19 14:07:53,130 P2061813 INFO [Metrics] AUC: 0.840587 - logloss: 0.509772
+2024-03-19 14:07:53,134 P2061813 INFO Monitor(max)=0.840587 STOP!
+2024-03-19 14:07:53,134 P2061813 INFO Reduce learning rate on plateau: 0.000001
+2024-03-19 14:07:53,134 P2061813 INFO ********* Epoch==27 early stop *********
+2024-03-19 14:07:53,317 P2061813 INFO Training finished.
+2024-03-19 14:07:53,318 P2061813 INFO Load best model: /mnt/public/lhh/code/model_zoo/TF4CTR/TF4CTR_torch/checkpoints/KKBox_x1_h5/TF4CTR_KKBox_031_0e2e39da.model
+2024-03-19 14:07:53,342 P2061813 INFO ****** Validation evaluation ******
+2024-03-19 14:07:57,662 P2061813 INFO ===
+2024-03-19 14:07:57,662 P2061813 INFO [Metrics] logloss: 0.496625 - AUC: 0.842704
+2024-03-19 14:07:57,761 P2061813 INFO ******** Test evaluation ********
+2024-03-19 14:07:57,761 P2061813 INFO Loading data...
+2024-03-19 14:07:57,761 P2061813 INFO Loading data from h5: ../../../data/KKBox_x1_h5/test.h5
+2024-03-19 14:07:58,062 P2061813 INFO Test samples: total/737743, blocks/1
+2024-03-19 14:07:58,062 P2061813 INFO Loading test data done.
+2024-03-19 14:08:02,149 P2061813 INFO ===
+2024-03-19 14:08:02,149 P2061813 INFO [Metrics] logloss: 0.496302 - AUC: 0.842933

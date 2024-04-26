@@ -1,0 +1,36 @@
+base_config: ./config/
+base_expid: TF4CTRv2_DeepFM_Movielens
+dataset_id: Movielenslatest_x1_csv
+
+dataset_config:
+    Movielenslatest_x1_csv:
+        data_format: csv
+        data_root: ../../../data/
+        feature_cols:
+        - {name: group_id, active: True, dtype: int, type: meta, preprocess: "copy_from(user_id)", remap: False}
+        -   active: true
+            dtype: float
+            name: [user_id, item_id, tag_id]
+            type: categorical
+        label_col: {dtype: float, name: label}
+        min_categr_count: 2
+        test_data: ../../../data/MovielensLatest_x1/test.csv
+        train_data: ../../../data/MovielensLatest_x1/train.csv
+        valid_data: ../../../data/MovielensLatest_x1/valid.csv
+
+tuner_space:
+    model_root: './checkpoints/'
+    monitor: {'AUC': 1, 'logloss': 0, 'gAUC': 1}
+    metrics: [['logloss', 'AUC', 'gAUC']]
+    batch_size: 10000
+#    SSM: [ SER, GM, MoE, none ]
+#    DFM: [ WSF, VF, CF, MoEF, none ]
+    SSM: [ SER ]
+    DFM: [ WSF ]
+    gamma: [ 2 ]
+    c: [ 0.9 ]
+    alpha: [0.25]
+    net_dropout: [0.1, 0.2]
+    group_id: group_id
+    seed: [2023]
+

@@ -1,0 +1,242 @@
+2024-04-11 04:18:33,787 P4050162 INFO Params: {
+    "DFM": "MoEF",
+    "SSM": "SER",
+    "alpha": "0.25",
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "c": "0.7",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "Frappe_x1_csv_53b0b0b3",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "easy_hidden_units": "[400, 400]",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.1",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'int', 'name': 'group_id', 'preprocess': 'copy_from(user)', 'remap': False, 'type': 'meta'}, {'active': True, 'dtype': 'float', 'name': ['user', 'item', 'daytime', 'weekday', 'isweekend', 'homework', 'cost', 'weather', 'country', 'city'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gamma": "2",
+    "gpu": "0",
+    "group_id": "group_id",
+    "hard_hidden_units": "[400, 400, 400]",
+    "hidden_activations": "relu",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC', 'gAUC']",
+    "min_categr_count": "2",
+    "model": "TF4CTRv2",
+    "model_id": "TF4CTRv2_Frappe_184_8851f29e",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'gAUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.2",
+    "net_regularizer": "0",
+    "num_workers": "4",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2023",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/Frappe/test.csv",
+    "train_data": "../../../data/Frappe/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/Frappe/valid.csv",
+    "verbose": "1"
+}
+2024-04-11 04:18:33,788 P4050162 INFO Set up feature processor...
+2024-04-11 04:18:33,788 P4050162 WARNING Skip rebuilding ../../../data/Frappe_x1_csv_53b0b0b3/feature_map.json. Please delete it manually if rebuilding is required.
+2024-04-11 04:18:33,789 P4050162 INFO Load feature_map from json: ../../../data/Frappe_x1_csv_53b0b0b3/feature_map.json
+2024-04-11 04:18:33,789 P4050162 INFO Set column index...
+2024-04-11 04:18:33,789 P4050162 INFO Feature specs: {
+    "city": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 232, 'vocab_size': 233}",
+    "cost": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "country": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 81, 'vocab_size': 82}",
+    "daytime": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "group_id": "{'type': 'meta'}",
+    "homework": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4, 'vocab_size': 5}",
+    "isweekend": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "item": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 4083, 'vocab_size': 4084}",
+    "user": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 941, 'vocab_size': 942}",
+    "weather": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 10, 'vocab_size': 11}",
+    "weekday": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}"
+}
+2024-04-11 04:18:39,333 P4050162 INFO Total number of parameters: 715198.
+2024-04-11 04:18:39,333 P4050162 INFO Loading data...
+2024-04-11 04:18:39,333 P4050162 INFO Loading data from h5: ../../../data/Frappe_x1_csv_53b0b0b3/train.h5
+2024-04-11 04:18:39,384 P4050162 INFO Train samples: total/202027, blocks/1
+2024-04-11 04:18:39,384 P4050162 INFO Loading data from h5: ../../../data/Frappe_x1_csv_53b0b0b3/valid.h5
+2024-04-11 04:18:39,395 P4050162 INFO Validation samples: total/57722, blocks/1
+2024-04-11 04:18:39,395 P4050162 INFO Loading train and validation data done.
+2024-04-11 04:18:39,395 P4050162 INFO Start training: 21 batches/epoch
+2024-04-11 04:18:39,395 P4050162 INFO ************ Epoch=1 start ************
+2024-04-11 04:18:40,775 P4050162 INFO Train loss: 0.827577
+2024-04-11 04:18:40,776 P4050162 INFO Evaluation @epoch 1 - batch 21: 
+2024-04-11 04:18:46,691 P4050162 INFO ===
+2024-04-11 04:18:46,692 P4050162 INFO [Metrics] AUC: 0.927474 - gAUC: 0.923701 - logloss: 0.614412
+2024-04-11 04:18:46,692 P4050162 INFO Save best model: monitor(max)=1.851175
+2024-04-11 04:18:46,891 P4050162 INFO ************ Epoch=1 end ************
+2024-04-11 04:18:48,416 P4050162 INFO Train loss: 0.586745
+2024-04-11 04:18:48,417 P4050162 INFO Evaluation @epoch 2 - batch 21: 
+2024-04-11 04:18:54,195 P4050162 INFO ===
+2024-04-11 04:18:54,195 P4050162 INFO [Metrics] AUC: 0.936389 - gAUC: 0.928590 - logloss: 0.577097
+2024-04-11 04:18:54,195 P4050162 INFO Save best model: monitor(max)=1.864979
+2024-04-11 04:18:54,351 P4050162 INFO ************ Epoch=2 end ************
+2024-04-11 04:18:55,554 P4050162 INFO Train loss: 0.471398
+2024-04-11 04:18:55,554 P4050162 INFO Evaluation @epoch 3 - batch 21: 
+2024-04-11 04:19:00,296 P4050162 INFO ===
+2024-04-11 04:19:00,296 P4050162 INFO [Metrics] AUC: 0.940538 - gAUC: 0.933278 - logloss: 0.533407
+2024-04-11 04:19:00,297 P4050162 INFO Save best model: monitor(max)=1.873816
+2024-04-11 04:19:00,457 P4050162 INFO ************ Epoch=3 end ************
+2024-04-11 04:19:01,622 P4050162 INFO Train loss: 0.404642
+2024-04-11 04:19:01,623 P4050162 INFO Evaluation @epoch 4 - batch 21: 
+2024-04-11 04:19:07,078 P4050162 INFO ===
+2024-04-11 04:19:07,078 P4050162 INFO [Metrics] AUC: 0.969483 - gAUC: 0.965152 - logloss: 0.410898
+2024-04-11 04:19:07,079 P4050162 INFO Save best model: monitor(max)=1.934635
+2024-04-11 04:19:07,247 P4050162 INFO ************ Epoch=4 end ************
+2024-04-11 04:19:08,493 P4050162 INFO Train loss: 0.364180
+2024-04-11 04:19:08,494 P4050162 INFO Evaluation @epoch 5 - batch 21: 
+2024-04-11 04:19:13,489 P4050162 INFO ===
+2024-04-11 04:19:13,489 P4050162 INFO [Metrics] AUC: 0.980644 - gAUC: 0.974177 - logloss: 0.177108
+2024-04-11 04:19:13,490 P4050162 INFO Save best model: monitor(max)=1.954821
+2024-04-11 04:19:13,629 P4050162 INFO ************ Epoch=5 end ************
+2024-04-11 04:19:14,740 P4050162 INFO Train loss: 0.336546
+2024-04-11 04:19:14,741 P4050162 INFO Evaluation @epoch 6 - batch 21: 
+2024-04-11 04:19:19,985 P4050162 INFO ===
+2024-04-11 04:19:19,986 P4050162 INFO [Metrics] AUC: 0.982275 - gAUC: 0.976790 - logloss: 0.147895
+2024-04-11 04:19:19,986 P4050162 INFO Save best model: monitor(max)=1.959065
+2024-04-11 04:19:20,121 P4050162 INFO ************ Epoch=6 end ************
+2024-04-11 04:19:21,439 P4050162 INFO Train loss: 0.318520
+2024-04-11 04:19:21,439 P4050162 INFO Evaluation @epoch 7 - batch 21: 
+2024-04-11 04:19:25,504 P4050162 INFO ===
+2024-04-11 04:19:25,504 P4050162 INFO [Metrics] AUC: 0.983469 - gAUC: 0.977413 - logloss: 0.145721
+2024-04-11 04:19:25,505 P4050162 INFO Save best model: monitor(max)=1.960882
+2024-04-11 04:19:25,666 P4050162 INFO ************ Epoch=7 end ************
+2024-04-11 04:19:26,771 P4050162 INFO Train loss: 0.310078
+2024-04-11 04:19:26,772 P4050162 INFO Evaluation @epoch 8 - batch 21: 
+2024-04-11 04:19:31,698 P4050162 INFO ===
+2024-04-11 04:19:31,698 P4050162 INFO [Metrics] AUC: 0.984148 - gAUC: 0.978144 - logloss: 0.141337
+2024-04-11 04:19:31,699 P4050162 INFO Save best model: monitor(max)=1.962292
+2024-04-11 04:19:31,879 P4050162 INFO ************ Epoch=8 end ************
+2024-04-11 04:19:33,266 P4050162 INFO Train loss: 0.301282
+2024-04-11 04:19:33,266 P4050162 INFO Evaluation @epoch 9 - batch 21: 
+2024-04-11 04:19:38,564 P4050162 INFO ===
+2024-04-11 04:19:38,565 P4050162 INFO [Metrics] AUC: 0.984334 - gAUC: 0.978221 - logloss: 0.142782
+2024-04-11 04:19:38,565 P4050162 INFO Save best model: monitor(max)=1.962554
+2024-04-11 04:19:38,662 P4050162 INFO ************ Epoch=9 end ************
+2024-04-11 04:19:39,685 P4050162 INFO Train loss: 0.294093
+2024-04-11 04:19:39,686 P4050162 INFO Evaluation @epoch 10 - batch 21: 
+2024-04-11 04:19:43,473 P4050162 INFO ===
+2024-04-11 04:19:43,473 P4050162 INFO [Metrics] AUC: 0.985626 - gAUC: 0.979530 - logloss: 0.134352
+2024-04-11 04:19:43,473 P4050162 INFO Save best model: monitor(max)=1.965155
+2024-04-11 04:19:43,588 P4050162 INFO ************ Epoch=10 end ************
+2024-04-11 04:19:44,810 P4050162 INFO Train loss: 0.289119
+2024-04-11 04:19:44,810 P4050162 INFO Evaluation @epoch 11 - batch 21: 
+2024-04-11 04:19:50,985 P4050162 INFO ===
+2024-04-11 04:19:50,985 P4050162 INFO [Metrics] AUC: 0.985435 - gAUC: 0.979829 - logloss: 0.135704
+2024-04-11 04:19:50,986 P4050162 INFO Save best model: monitor(max)=1.965264
+2024-04-11 04:19:51,188 P4050162 INFO ************ Epoch=11 end ************
+2024-04-11 04:19:52,494 P4050162 INFO Train loss: 0.283532
+2024-04-11 04:19:52,495 P4050162 INFO Evaluation @epoch 12 - batch 21: 
+2024-04-11 04:19:58,652 P4050162 INFO ===
+2024-04-11 04:19:58,652 P4050162 INFO [Metrics] AUC: 0.986010 - gAUC: 0.980421 - logloss: 0.134688
+2024-04-11 04:19:58,653 P4050162 INFO Save best model: monitor(max)=1.966431
+2024-04-11 04:19:58,869 P4050162 INFO ************ Epoch=12 end ************
+2024-04-11 04:20:00,166 P4050162 INFO Train loss: 0.281255
+2024-04-11 04:20:00,166 P4050162 INFO Evaluation @epoch 13 - batch 21: 
+2024-04-11 04:20:06,457 P4050162 INFO ===
+2024-04-11 04:20:06,457 P4050162 INFO [Metrics] AUC: 0.985884 - gAUC: 0.979938 - logloss: 0.136127
+2024-04-11 04:20:06,458 P4050162 INFO Monitor(max)=1.965821 STOP!
+2024-04-11 04:20:06,458 P4050162 INFO Reduce learning rate on plateau: 0.000100
+2024-04-11 04:20:06,679 P4050162 INFO ************ Epoch=13 end ************
+2024-04-11 04:20:08,040 P4050162 INFO Train loss: 0.233706
+2024-04-11 04:20:08,041 P4050162 INFO Evaluation @epoch 14 - batch 21: 
+2024-04-11 04:20:13,813 P4050162 INFO ===
+2024-04-11 04:20:13,814 P4050162 INFO [Metrics] AUC: 0.986857 - gAUC: 0.980993 - logloss: 0.132696
+2024-04-11 04:20:13,814 P4050162 INFO Save best model: monitor(max)=1.967850
+2024-04-11 04:20:13,970 P4050162 INFO ************ Epoch=14 end ************
+2024-04-11 04:20:15,231 P4050162 INFO Train loss: 0.202442
+2024-04-11 04:20:15,231 P4050162 INFO Evaluation @epoch 15 - batch 21: 
+2024-04-11 04:20:19,229 P4050162 INFO ===
+2024-04-11 04:20:19,229 P4050162 INFO [Metrics] AUC: 0.987413 - gAUC: 0.981660 - logloss: 0.131057
+2024-04-11 04:20:19,229 P4050162 INFO Save best model: monitor(max)=1.969074
+2024-04-11 04:20:19,343 P4050162 INFO ************ Epoch=15 end ************
+2024-04-11 04:20:20,416 P4050162 INFO Train loss: 0.179240
+2024-04-11 04:20:20,417 P4050162 INFO Evaluation @epoch 16 - batch 21: 
+2024-04-11 04:20:25,934 P4050162 INFO ===
+2024-04-11 04:20:25,934 P4050162 INFO [Metrics] AUC: 0.987665 - gAUC: 0.981853 - logloss: 0.132380
+2024-04-11 04:20:25,935 P4050162 INFO Save best model: monitor(max)=1.969517
+2024-04-11 04:20:26,111 P4050162 INFO ************ Epoch=16 end ************
+2024-04-11 04:20:27,325 P4050162 INFO Train loss: 0.162933
+2024-04-11 04:20:27,325 P4050162 INFO Evaluation @epoch 17 - batch 21: 
+2024-04-11 04:20:31,904 P4050162 INFO ===
+2024-04-11 04:20:31,905 P4050162 INFO [Metrics] AUC: 0.987846 - gAUC: 0.982084 - logloss: 0.134198
+2024-04-11 04:20:31,905 P4050162 INFO Save best model: monitor(max)=1.969930
+2024-04-11 04:20:32,027 P4050162 INFO ************ Epoch=17 end ************
+2024-04-11 04:20:33,038 P4050162 INFO Train loss: 0.150217
+2024-04-11 04:20:33,038 P4050162 INFO Evaluation @epoch 18 - batch 21: 
+2024-04-11 04:20:37,271 P4050162 INFO ===
+2024-04-11 04:20:37,271 P4050162 INFO [Metrics] AUC: 0.987872 - gAUC: 0.982170 - logloss: 0.136229
+2024-04-11 04:20:37,272 P4050162 INFO Save best model: monitor(max)=1.970042
+2024-04-11 04:20:37,387 P4050162 INFO ************ Epoch=18 end ************
+2024-04-11 04:20:38,528 P4050162 INFO Train loss: 0.138090
+2024-04-11 04:20:38,528 P4050162 INFO Evaluation @epoch 19 - batch 21: 
+2024-04-11 04:20:42,874 P4050162 INFO ===
+2024-04-11 04:20:42,874 P4050162 INFO [Metrics] AUC: 0.987905 - gAUC: 0.982266 - logloss: 0.139309
+2024-04-11 04:20:42,874 P4050162 INFO Save best model: monitor(max)=1.970171
+2024-04-11 04:20:42,990 P4050162 INFO ************ Epoch=19 end ************
+2024-04-11 04:20:44,041 P4050162 INFO Train loss: 0.129427
+2024-04-11 04:20:44,041 P4050162 INFO Evaluation @epoch 20 - batch 21: 
+2024-04-11 04:20:48,711 P4050162 INFO ===
+2024-04-11 04:20:48,712 P4050162 INFO [Metrics] AUC: 0.987792 - gAUC: 0.982321 - logloss: 0.141119
+2024-04-11 04:20:48,712 P4050162 INFO Monitor(max)=1.970113 STOP!
+2024-04-11 04:20:48,712 P4050162 INFO Reduce learning rate on plateau: 0.000010
+2024-04-11 04:20:48,854 P4050162 INFO ************ Epoch=20 end ************
+2024-04-11 04:20:50,146 P4050162 INFO Train loss: 0.121738
+2024-04-11 04:20:50,146 P4050162 INFO Evaluation @epoch 21 - batch 21: 
+2024-04-11 04:20:55,874 P4050162 INFO ===
+2024-04-11 04:20:55,874 P4050162 INFO [Metrics] AUC: 0.987850 - gAUC: 0.982328 - logloss: 0.141728
+2024-04-11 04:20:55,875 P4050162 INFO Save best model: monitor(max)=1.970177
+2024-04-11 04:20:56,040 P4050162 INFO ************ Epoch=21 end ************
+2024-04-11 04:20:57,255 P4050162 INFO Train loss: 0.120668
+2024-04-11 04:20:57,255 P4050162 INFO Evaluation @epoch 22 - batch 21: 
+2024-04-11 04:21:01,602 P4050162 INFO ===
+2024-04-11 04:21:01,602 P4050162 INFO [Metrics] AUC: 0.987881 - gAUC: 0.982382 - logloss: 0.141838
+2024-04-11 04:21:01,603 P4050162 INFO Save best model: monitor(max)=1.970263
+2024-04-11 04:21:01,720 P4050162 INFO ************ Epoch=22 end ************
+2024-04-11 04:21:02,854 P4050162 INFO Train loss: 0.119330
+2024-04-11 04:21:02,855 P4050162 INFO Evaluation @epoch 23 - batch 21: 
+2024-04-11 04:21:07,161 P4050162 INFO ===
+2024-04-11 04:21:07,162 P4050162 INFO [Metrics] AUC: 0.987894 - gAUC: 0.982373 - logloss: 0.142084
+2024-04-11 04:21:07,162 P4050162 INFO Save best model: monitor(max)=1.970266
+2024-04-11 04:21:07,269 P4050162 INFO ************ Epoch=23 end ************
+2024-04-11 04:21:08,395 P4050162 INFO Train loss: 0.118284
+2024-04-11 04:21:08,395 P4050162 INFO Evaluation @epoch 24 - batch 21: 
+2024-04-11 04:21:13,529 P4050162 INFO ===
+2024-04-11 04:21:13,530 P4050162 INFO [Metrics] AUC: 0.987873 - gAUC: 0.982362 - logloss: 0.142401
+2024-04-11 04:21:13,530 P4050162 INFO Monitor(max)=1.970235 STOP!
+2024-04-11 04:21:13,530 P4050162 INFO Reduce learning rate on plateau: 0.000001
+2024-04-11 04:21:13,641 P4050162 INFO ************ Epoch=24 end ************
+2024-04-11 04:21:14,725 P4050162 INFO Train loss: 0.118097
+2024-04-11 04:21:14,725 P4050162 INFO Evaluation @epoch 25 - batch 21: 
+2024-04-11 04:21:19,365 P4050162 INFO ===
+2024-04-11 04:21:19,365 P4050162 INFO [Metrics] AUC: 0.987889 - gAUC: 0.982371 - logloss: 0.142258
+2024-04-11 04:21:19,366 P4050162 INFO Monitor(max)=1.970261 STOP!
+2024-04-11 04:21:19,366 P4050162 INFO Reduce learning rate on plateau: 0.000001
+2024-04-11 04:21:19,366 P4050162 INFO ********* Epoch==25 early stop *********
+2024-04-11 04:21:19,494 P4050162 INFO Training finished.
+2024-04-11 04:21:19,494 P4050162 INFO Load best model: /mnt/public/lhh/code/model_zoo/TF4CTR/TF4CTR_torch/checkpoints/Frappe_x1_csv_53b0b0b3/TF4CTRv2_Frappe_184_8851f29e.model
+2024-04-11 04:21:19,507 P4050162 INFO ****** Validation evaluation ******
+2024-04-11 04:21:25,475 P4050162 INFO ===
+2024-04-11 04:21:25,475 P4050162 INFO [Metrics] logloss: 0.142084 - AUC: 0.987894 - gAUC: 0.982373
+2024-04-11 04:21:25,567 P4050162 INFO ******** Test evaluation ********
+2024-04-11 04:21:25,567 P4050162 INFO Loading data...
+2024-04-11 04:21:25,567 P4050162 INFO Loading data from h5: ../../../data/Frappe_x1_csv_53b0b0b3/test.h5
+2024-04-11 04:21:25,578 P4050162 INFO Test samples: total/28860, blocks/1
+2024-04-11 04:21:25,578 P4050162 INFO Loading test data done.
+2024-04-11 04:21:31,097 P4050162 INFO ===
+2024-04-11 04:21:31,098 P4050162 INFO [Metrics] logloss: 0.155991 - AUC: 0.986436 - gAUC: 0.982078

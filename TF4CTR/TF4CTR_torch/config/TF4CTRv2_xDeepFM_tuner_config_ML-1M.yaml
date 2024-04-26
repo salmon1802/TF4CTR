@@ -1,0 +1,37 @@
+base_config: ./config/
+base_expid: TF4CTRv2_xDeepFM_ML-1M
+dataset_id: ML-1M
+
+dataset_config:
+    ML-1M:
+        data_format: csv
+        data_root: ../../../data/
+        feature_cols:
+            - { name: group_id, active: True, dtype: int, type: meta, preprocess: "copy_from(UserID)", remap: False }
+            - active: true
+              dtype: float
+              name: [ UserID, Gender, Age, Occupation, MovieID ]
+              type: categorical
+        label_col: { dtype: float, name: Label }
+        min_categr_count: 2
+        test_data: ../../../data/ML-1M/test.csv
+        train_data: ../../../data/ML-1M/train.csv
+        valid_data: ../../../data/ML-1M/valid.csv
+
+tuner_space:
+    model_root: './checkpoints/'
+    monitor: {'AUC': 1, 'logloss': 0, 'gAUC': 1}
+    metrics: [['logloss', 'AUC', 'gAUC']]
+    batch_size: 10000
+#    SSM: [ SER, GM, MoE, none ]
+#    DFM: [ WSF, VF, CF, MoEF, none ]
+    SSM: [ SER ]
+    DFM: [ CF ]
+    gamma: [ 1, 2 ]
+    cin_hidden_units: [[64, 64]]
+    c: [ 0.7, 0.8, 0.9 ]
+    alpha: [0.25]
+    net_dropout: [0.1, 0.2, 0.3]
+    group_id: group_id
+    seed: [2023]
+

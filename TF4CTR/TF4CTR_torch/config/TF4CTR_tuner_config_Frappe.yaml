@@ -1,0 +1,16 @@
+base_config: ./config/
+base_expid: TF4CTR_Frappe
+dataset_id: Frappe_x1_h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_size: 10000
+    hard_hidden_units: [[400, 400, 400]]
+    easy_hidden_units: [[400]]
+    embedding_regularizer: [5.e-2, 1.e-1]
+    gamma: [1, 2]
+    c: [0.9, 0.8, 0.7, 0.6, 0.5]
+    alpha: [0.1, 0.2, 0.3, 0.4]
+    net_dropout: [0.2]
+    seed: 2023
+

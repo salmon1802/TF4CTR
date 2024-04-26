@@ -1,0 +1,43 @@
+base_config: ./config/
+base_expid: TF4CTRv2_KKBox
+dataset_id: KKBox_x1_csv
+
+dataset_config:
+    KKBox_x1_csv:
+        data_format: csv
+        data_root: ../../../data/
+        feature_cols:
+            - { name: group_id, active: True, dtype: int, type: meta, preprocess: "copy_from(msno)", remap: False }
+            - active: true
+              dtype: str
+              name: [ msno, song_id, source_system_tab, source_screen_name, source_type,
+                      city, gender, registered_via, language ]
+              type: categorical
+            - { active: true, dtype: str, encoder: MaskedSumPooling, max_len: 3, name: genre_ids,
+                type: sequence }
+            - { active: true, dtype: str, encoder: MaskedSumPooling, max_len: 3, name: artist_name,
+                type: sequence }
+            - { active: true, dtype: str, name: isrc, preprocess: extract_country_code, type: categorical }
+            - { active: true, dtype: str, name: bd, preprocess: bucketize_age, type: categorical }
+        label_col: { dtype: float, name: label }
+        min_categr_count: 2
+        test_data: ../../../data/KKBox_x1/test.csv
+        train_data: ../../../data/KKBox_x1/train.csv
+        valid_data: ../../../data/KKBox_x1/valid.csv
+
+tuner_space:
+    model_root: './checkpoints/'
+    monitor: {'AUC': 1, 'logloss': 0, 'gAUC': 1}
+    metrics: [['logloss', 'AUC', 'gAUC']]
+    batch_size: 10000
+#    SSM: [ SER, GM, MoE, none ]
+#    DFM: [ WSF, VF, CF, MoEF, none ]
+    SSM: [ SER ]
+    DFM: [ MoEF ]
+    easy_hidden_units: [ [ 400, 400 ] ]
+    gamma: [ 1 ]
+    c: [ 0.7 ]
+    alpha: 0.25
+    group_id: group_id
+    seed: [2020, 2021, 2022, 2024]
+

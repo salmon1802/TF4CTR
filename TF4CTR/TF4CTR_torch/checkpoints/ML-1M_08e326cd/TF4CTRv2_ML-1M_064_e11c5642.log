@@ -1,0 +1,169 @@
+2024-04-12 00:17:32,426 P4149137 INFO Params: {
+    "DFM": "MoEF",
+    "SSM": "GM",
+    "alpha": "0.25",
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "c": "0.8",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "ML-1M_08e326cd",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "easy_hidden_units": "[400]",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.01",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'int', 'name': 'group_id', 'preprocess': 'copy_from(UserID)', 'remap': False, 'type': 'meta'}, {'active': True, 'dtype': 'float', 'name': ['UserID', 'Gender', 'Age', 'Occupation', 'MovieID'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gamma": "2",
+    "gpu": "2",
+    "group_id": "group_id",
+    "hard_hidden_units": "[400, 400, 400]",
+    "hidden_activations": "relu",
+    "label_col": "{'dtype': 'float', 'name': 'Label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC', 'gAUC']",
+    "min_categr_count": "2",
+    "model": "TF4CTRv2",
+    "model_id": "TF4CTRv2_ML-1M_064_e11c5642",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'gAUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2023",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/ML-1M/test.csv",
+    "train_data": "../../../data/ML-1M/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/ML-1M/valid.csv",
+    "verbose": "1"
+}
+2024-04-12 00:17:32,427 P4149137 INFO Set up feature processor...
+2024-04-12 00:17:32,428 P4149137 WARNING Skip rebuilding ../../../data/ML-1M_08e326cd/feature_map.json. Please delete it manually if rebuilding is required.
+2024-04-12 00:17:32,428 P4149137 INFO Load feature_map from json: ../../../data/ML-1M_08e326cd/feature_map.json
+2024-04-12 00:17:32,428 P4149137 INFO Set column index...
+2024-04-12 00:17:32,428 P4149137 INFO Feature specs: {
+    "Age": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "Gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "MovieID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3547, 'vocab_size': 3548}",
+    "Occupation": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "UserID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6041, 'vocab_size': 6042}",
+    "group_id": "{'type': 'meta'}"
+}
+2024-04-12 00:17:36,491 P4149137 INFO Total number of parameters: 559782.
+2024-04-12 00:17:36,491 P4149137 INFO Loading data...
+2024-04-12 00:17:36,491 P4149137 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/train.h5
+2024-04-12 00:17:36,568 P4149137 INFO Train samples: total/800167, blocks/1
+2024-04-12 00:17:36,568 P4149137 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/valid.h5
+2024-04-12 00:17:36,574 P4149137 INFO Validation samples: total/100021, blocks/1
+2024-04-12 00:17:36,574 P4149137 INFO Loading train and validation data done.
+2024-04-12 00:17:36,574 P4149137 INFO Start training: 81 batches/epoch
+2024-04-12 00:17:36,574 P4149137 INFO ************ Epoch=1 start ************
+2024-04-12 00:17:39,433 P4149137 INFO Train loss: 1.037479
+2024-04-12 00:17:39,434 P4149137 INFO Evaluation @epoch 1 - batch 81: 
+2024-04-12 00:17:47,722 P4149137 INFO ===
+2024-04-12 00:17:47,722 P4149137 INFO [Metrics] AUC: 0.784210 - gAUC: 0.732229 - logloss: 0.615539
+2024-04-12 00:17:47,722 P4149137 INFO Save best model: monitor(max)=1.516439
+2024-04-12 00:17:47,905 P4149137 INFO ************ Epoch=1 end ************
+2024-04-12 00:17:50,792 P4149137 INFO Train loss: 0.957599
+2024-04-12 00:17:50,792 P4149137 INFO Evaluation @epoch 2 - batch 81: 
+2024-04-12 00:17:59,588 P4149137 INFO ===
+2024-04-12 00:17:59,589 P4149137 INFO [Metrics] AUC: 0.794281 - gAUC: 0.741010 - logloss: 0.537302
+2024-04-12 00:17:59,589 P4149137 INFO Save best model: monitor(max)=1.535291
+2024-04-12 00:17:59,729 P4149137 INFO ************ Epoch=2 end ************
+2024-04-12 00:18:02,537 P4149137 INFO Train loss: 0.941582
+2024-04-12 00:18:02,537 P4149137 INFO Evaluation @epoch 3 - batch 81: 
+2024-04-12 00:18:11,342 P4149137 INFO ===
+2024-04-12 00:18:11,342 P4149137 INFO [Metrics] AUC: 0.800264 - gAUC: 0.749250 - logloss: 0.530953
+2024-04-12 00:18:11,342 P4149137 INFO Save best model: monitor(max)=1.549514
+2024-04-12 00:18:11,494 P4149137 INFO ************ Epoch=3 end ************
+2024-04-12 00:18:14,114 P4149137 INFO Train loss: 0.930658
+2024-04-12 00:18:14,115 P4149137 INFO Evaluation @epoch 4 - batch 81: 
+2024-04-12 00:18:22,845 P4149137 INFO ===
+2024-04-12 00:18:22,846 P4149137 INFO [Metrics] AUC: 0.805781 - gAUC: 0.758052 - logloss: 0.525150
+2024-04-12 00:18:22,846 P4149137 INFO Save best model: monitor(max)=1.563833
+2024-04-12 00:18:22,999 P4149137 INFO ************ Epoch=4 end ************
+2024-04-12 00:18:25,785 P4149137 INFO Train loss: 0.922658
+2024-04-12 00:18:25,786 P4149137 INFO Evaluation @epoch 5 - batch 81: 
+2024-04-12 00:18:33,735 P4149137 INFO ===
+2024-04-12 00:18:33,735 P4149137 INFO [Metrics] AUC: 0.808785 - gAUC: 0.761606 - logloss: 0.523301
+2024-04-12 00:18:33,736 P4149137 INFO Save best model: monitor(max)=1.570391
+2024-04-12 00:18:33,910 P4149137 INFO ************ Epoch=5 end ************
+2024-04-12 00:18:36,769 P4149137 INFO Train loss: 0.918478
+2024-04-12 00:18:36,769 P4149137 INFO Evaluation @epoch 6 - batch 81: 
+2024-04-12 00:18:44,079 P4149137 INFO ===
+2024-04-12 00:18:44,079 P4149137 INFO [Metrics] AUC: 0.810009 - gAUC: 0.762795 - logloss: 0.519867
+2024-04-12 00:18:44,079 P4149137 INFO Save best model: monitor(max)=1.572804
+2024-04-12 00:18:44,218 P4149137 INFO ************ Epoch=6 end ************
+2024-04-12 00:18:46,963 P4149137 INFO Train loss: 0.913326
+2024-04-12 00:18:46,963 P4149137 INFO Evaluation @epoch 7 - batch 81: 
+2024-04-12 00:18:54,363 P4149137 INFO ===
+2024-04-12 00:18:54,363 P4149137 INFO [Metrics] AUC: 0.810517 - gAUC: 0.763946 - logloss: 0.520075
+2024-04-12 00:18:54,363 P4149137 INFO Save best model: monitor(max)=1.574464
+2024-04-12 00:18:54,491 P4149137 INFO ************ Epoch=7 end ************
+2024-04-12 00:18:57,799 P4149137 INFO Train loss: 0.910876
+2024-04-12 00:18:57,799 P4149137 INFO Evaluation @epoch 8 - batch 81: 
+2024-04-12 00:19:05,049 P4149137 INFO ===
+2024-04-12 00:19:05,050 P4149137 INFO [Metrics] AUC: 0.812202 - gAUC: 0.766851 - logloss: 0.518639
+2024-04-12 00:19:05,050 P4149137 INFO Save best model: monitor(max)=1.579053
+2024-04-12 00:19:05,259 P4149137 INFO ************ Epoch=8 end ************
+2024-04-12 00:19:08,503 P4149137 INFO Train loss: 0.908418
+2024-04-12 00:19:08,503 P4149137 INFO Evaluation @epoch 9 - batch 81: 
+2024-04-12 00:19:16,214 P4149137 INFO ===
+2024-04-12 00:19:16,214 P4149137 INFO [Metrics] AUC: 0.812971 - gAUC: 0.767102 - logloss: 0.516973
+2024-04-12 00:19:16,214 P4149137 INFO Save best model: monitor(max)=1.580073
+2024-04-12 00:19:16,389 P4149137 INFO ************ Epoch=9 end ************
+2024-04-12 00:19:19,107 P4149137 INFO Train loss: 0.906117
+2024-04-12 00:19:19,107 P4149137 INFO Evaluation @epoch 10 - batch 81: 
+2024-04-12 00:19:27,295 P4149137 INFO ===
+2024-04-12 00:19:27,295 P4149137 INFO [Metrics] AUC: 0.813710 - gAUC: 0.767555 - logloss: 0.516641
+2024-04-12 00:19:27,296 P4149137 INFO Save best model: monitor(max)=1.581266
+2024-04-12 00:19:27,452 P4149137 INFO ************ Epoch=10 end ************
+2024-04-12 00:19:29,909 P4149137 INFO Train loss: 0.901440
+2024-04-12 00:19:29,909 P4149137 INFO Evaluation @epoch 11 - batch 81: 
+2024-04-12 00:19:38,477 P4149137 INFO ===
+2024-04-12 00:19:38,477 P4149137 INFO [Metrics] AUC: 0.814291 - gAUC: 0.769968 - logloss: 0.520081
+2024-04-12 00:19:38,477 P4149137 INFO Save best model: monitor(max)=1.584260
+2024-04-12 00:19:38,612 P4149137 INFO ************ Epoch=11 end ************
+2024-04-12 00:19:41,200 P4149137 INFO Train loss: 0.898848
+2024-04-12 00:19:41,201 P4149137 INFO Evaluation @epoch 12 - batch 81: 
+2024-04-12 00:19:49,671 P4149137 INFO ===
+2024-04-12 00:19:49,671 P4149137 INFO [Metrics] AUC: 0.815137 - gAUC: 0.770802 - logloss: 0.515316
+2024-04-12 00:19:49,672 P4149137 INFO Save best model: monitor(max)=1.585939
+2024-04-12 00:19:49,854 P4149137 INFO ************ Epoch=12 end ************
+2024-04-12 00:19:52,381 P4149137 INFO Train loss: 0.897162
+2024-04-12 00:19:52,382 P4149137 INFO Evaluation @epoch 13 - batch 81: 
+2024-04-12 00:19:58,858 P4149137 INFO ===
+2024-04-12 00:19:58,859 P4149137 INFO [Metrics] AUC: 0.813935 - gAUC: 0.769050 - logloss: 0.517287
+2024-04-12 00:19:58,859 P4149137 INFO Monitor(max)=1.582985 STOP!
+2024-04-12 00:19:58,859 P4149137 INFO Reduce learning rate on plateau: 0.000100
+2024-04-12 00:19:58,970 P4149137 INFO ************ Epoch=13 end ************
+2024-04-12 00:20:01,389 P4149137 INFO Train loss: 0.825759
+2024-04-12 00:20:01,390 P4149137 INFO Evaluation @epoch 14 - batch 81: 
+2024-04-12 00:20:09,679 P4149137 INFO ===
+2024-04-12 00:20:09,679 P4149137 INFO [Metrics] AUC: 0.812638 - gAUC: 0.765967 - logloss: 0.528785
+2024-04-12 00:20:09,679 P4149137 INFO Monitor(max)=1.578604 STOP!
+2024-04-12 00:20:09,679 P4149137 INFO Reduce learning rate on plateau: 0.000010
+2024-04-12 00:20:09,679 P4149137 INFO ********* Epoch==14 early stop *********
+2024-04-12 00:20:09,797 P4149137 INFO Training finished.
+2024-04-12 00:20:09,797 P4149137 INFO Load best model: /mnt/public/lhh/code/model_zoo/TF4CTR/TF4CTR_torch/checkpoints/ML-1M_08e326cd/TF4CTRv2_ML-1M_064_e11c5642.model
+2024-04-12 00:20:09,812 P4149137 INFO ****** Validation evaluation ******
+2024-04-12 00:20:17,346 P4149137 INFO ===
+2024-04-12 00:20:17,346 P4149137 INFO [Metrics] logloss: 0.515316 - AUC: 0.815137 - gAUC: 0.770802
+2024-04-12 00:20:17,388 P4149137 INFO ******** Test evaluation ********
+2024-04-12 00:20:17,388 P4149137 INFO Loading data...
+2024-04-12 00:20:17,389 P4149137 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/test.h5
+2024-04-12 00:20:17,402 P4149137 INFO Test samples: total/100021, blocks/1
+2024-04-12 00:20:17,402 P4149137 INFO Loading test data done.
+2024-04-12 00:20:25,438 P4149137 INFO ===
+2024-04-12 00:20:25,438 P4149137 INFO [Metrics] logloss: 0.514967 - AUC: 0.814671 - gAUC: 0.770236

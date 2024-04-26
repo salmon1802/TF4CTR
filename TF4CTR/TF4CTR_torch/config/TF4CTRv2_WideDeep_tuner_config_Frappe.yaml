@@ -1,0 +1,36 @@
+base_config: ./config/
+base_expid: TF4CTRv2_WideDeep_Frappe
+dataset_id: Frappe_x1_csv
+
+dataset_config:
+    Frappe_x1_csv:
+        data_format: csv
+        data_root: ../../../data/
+        feature_cols:
+            - { name: group_id, active: True, dtype: int, type: meta, preprocess: "copy_from(user)", remap: False }
+            - active: true
+              dtype: float
+              name: [ user, item, daytime, weekday, isweekend, homework, cost, weather, country,
+                      city ]
+              type: categorical
+        label_col: { dtype: float, name: label }
+        min_categr_count: 2
+        test_data: ../../../data/Frappe/test.csv
+        train_data: ../../../data/Frappe/train.csv
+        valid_data: ../../../data/Frappe/valid.csv
+
+tuner_space:
+    model_root: './checkpoints/'
+    monitor: {'AUC': 1, 'logloss': 0, 'gAUC': 1}
+    metrics: [['logloss', 'AUC', 'gAUC']]
+    batch_size: 10000
+#    SSM: [ SER, GM, MoE, none ]
+#    DFM: [ WSF, VF, CF, MoEF, none ]
+    SSM: [ SER ]
+    DFM: [ WSF ]
+    gamma: [ 1, 2 ]
+    c: [ 0.7, 0.8, 0.9 ]
+    alpha: [0.25]
+    group_id: group_id
+    seed: [2023]
+

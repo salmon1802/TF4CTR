@@ -1,0 +1,169 @@
+2024-03-13 22:22:27,819 P2887224 INFO Params: {
+    "alpha": "0.3",
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "c": "0.8",
+    "data_format": "h5",
+    "data_root": "../../../data/",
+    "dataset_id": "Movielenslatest_x1_h5",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "easy_hidden_units": "[400]",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.01",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'float', 'name': ['user_id', 'item_id', 'tag_id'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gamma": "2",
+    "gpu": "3",
+    "group_id": "None",
+    "hard_hidden_units": "[400, 400, 400]",
+    "hidden_activations": "relu",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "min_categr_count": "2",
+    "model": "TF4CTR",
+    "model_id": "TF4CTR_Movielens_054_0ed421b3",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.2",
+    "net_regularizer": "0",
+    "num_workers": "4",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2023",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/Movielenslatest_x1_h5/test.h5",
+    "train_data": "../../../data/Movielenslatest_x1_h5/train.h5",
+    "use_features": "None",
+    "valid_data": "../../../data/Movielenslatest_x1_h5/valid.h5",
+    "verbose": "1"
+}
+2024-03-13 22:22:27,819 P2887224 INFO Load feature_map from json: ../../../data/Movielenslatest_x1_h5/feature_map.json
+2024-03-13 22:22:27,820 P2887224 INFO Set column index...
+2024-03-13 22:22:27,820 P2887224 INFO Feature specs: {
+    "item_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22574, 'vocab_size': 22575}",
+    "tag_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 49658, 'vocab_size': 49659}",
+    "user_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 16361, 'vocab_size': 16362}"
+}
+2024-03-13 22:22:31,682 P2887224 INFO Total number of parameters: 1781540.
+2024-03-13 22:22:31,682 P2887224 INFO Loading data...
+2024-03-13 22:22:31,683 P2887224 INFO Loading data from h5: ../../../data/Movielenslatest_x1_h5/train.h5
+2024-03-13 22:22:31,726 P2887224 INFO Train samples: total/1404801, blocks/1
+2024-03-13 22:22:31,726 P2887224 INFO Loading data from h5: ../../../data/Movielenslatest_x1_h5/valid.h5
+2024-03-13 22:22:31,734 P2887224 INFO Validation samples: total/401372, blocks/1
+2024-03-13 22:22:31,734 P2887224 INFO Loading train and validation data done.
+2024-03-13 22:22:31,734 P2887224 INFO Start training: 141 batches/epoch
+2024-03-13 22:22:31,734 P2887224 INFO ************ Epoch=1 start ************
+2024-03-13 22:22:34,422 P2887224 INFO Train loss: 0.688746
+2024-03-13 22:22:34,422 P2887224 INFO Evaluation @epoch 1 - batch 141: 
+2024-03-13 22:22:36,256 P2887224 INFO ===
+2024-03-13 22:22:36,256 P2887224 INFO [Metrics] AUC: 0.934194 - logloss: 0.294009
+2024-03-13 22:22:36,257 P2887224 INFO Save best model: monitor(max)=0.934194
+2024-03-13 22:22:36,444 P2887224 INFO ************ Epoch=1 end ************
+2024-03-13 22:22:39,497 P2887224 INFO Train loss: 0.566430
+2024-03-13 22:22:39,497 P2887224 INFO Evaluation @epoch 2 - batch 141: 
+2024-03-13 22:22:41,128 P2887224 INFO ===
+2024-03-13 22:22:41,128 P2887224 INFO [Metrics] AUC: 0.946541 - logloss: 0.266331
+2024-03-13 22:22:41,129 P2887224 INFO Save best model: monitor(max)=0.946541
+2024-03-13 22:22:41,326 P2887224 INFO ************ Epoch=2 end ************
+2024-03-13 22:22:44,403 P2887224 INFO Train loss: 0.559711
+2024-03-13 22:22:44,403 P2887224 INFO Evaluation @epoch 3 - batch 141: 
+2024-03-13 22:22:46,205 P2887224 INFO ===
+2024-03-13 22:22:46,205 P2887224 INFO [Metrics] AUC: 0.954640 - logloss: 0.240908
+2024-03-13 22:22:46,205 P2887224 INFO Save best model: monitor(max)=0.954640
+2024-03-13 22:22:46,410 P2887224 INFO ************ Epoch=3 end ************
+2024-03-13 22:22:49,558 P2887224 INFO Train loss: 0.554743
+2024-03-13 22:22:49,559 P2887224 INFO Evaluation @epoch 4 - batch 141: 
+2024-03-13 22:22:51,279 P2887224 INFO ===
+2024-03-13 22:22:51,280 P2887224 INFO [Metrics] AUC: 0.959264 - logloss: 0.228213
+2024-03-13 22:22:51,280 P2887224 INFO Save best model: monitor(max)=0.959264
+2024-03-13 22:22:51,481 P2887224 INFO ************ Epoch=4 end ************
+2024-03-13 22:22:54,775 P2887224 INFO Train loss: 0.550830
+2024-03-13 22:22:54,775 P2887224 INFO Evaluation @epoch 5 - batch 141: 
+2024-03-13 22:22:56,473 P2887224 INFO ===
+2024-03-13 22:22:56,473 P2887224 INFO [Metrics] AUC: 0.960959 - logloss: 0.222188
+2024-03-13 22:22:56,473 P2887224 INFO Save best model: monitor(max)=0.960959
+2024-03-13 22:22:56,682 P2887224 INFO ************ Epoch=5 end ************
+2024-03-13 22:22:59,764 P2887224 INFO Train loss: 0.548665
+2024-03-13 22:22:59,764 P2887224 INFO Evaluation @epoch 6 - batch 141: 
+2024-03-13 22:23:01,519 P2887224 INFO ===
+2024-03-13 22:23:01,519 P2887224 INFO [Metrics] AUC: 0.961655 - logloss: 0.221453
+2024-03-13 22:23:01,519 P2887224 INFO Save best model: monitor(max)=0.961655
+2024-03-13 22:23:01,758 P2887224 INFO ************ Epoch=6 end ************
+2024-03-13 22:23:05,222 P2887224 INFO Train loss: 0.545791
+2024-03-13 22:23:05,223 P2887224 INFO Evaluation @epoch 7 - batch 141: 
+2024-03-13 22:23:07,011 P2887224 INFO ===
+2024-03-13 22:23:07,012 P2887224 INFO [Metrics] AUC: 0.962801 - logloss: 0.216001
+2024-03-13 22:23:07,012 P2887224 INFO Save best model: monitor(max)=0.962801
+2024-03-13 22:23:07,243 P2887224 INFO ************ Epoch=7 end ************
+2024-03-13 22:23:10,563 P2887224 INFO Train loss: 0.542056
+2024-03-13 22:23:10,564 P2887224 INFO Evaluation @epoch 8 - batch 141: 
+2024-03-13 22:23:12,187 P2887224 INFO ===
+2024-03-13 22:23:12,187 P2887224 INFO [Metrics] AUC: 0.963752 - logloss: 0.216547
+2024-03-13 22:23:12,187 P2887224 INFO Save best model: monitor(max)=0.963752
+2024-03-13 22:23:12,387 P2887224 INFO ************ Epoch=8 end ************
+2024-03-13 22:23:15,754 P2887224 INFO Train loss: 0.540767
+2024-03-13 22:23:15,755 P2887224 INFO Evaluation @epoch 9 - batch 141: 
+2024-03-13 22:23:17,516 P2887224 INFO ===
+2024-03-13 22:23:17,517 P2887224 INFO [Metrics] AUC: 0.964291 - logloss: 0.212966
+2024-03-13 22:23:17,517 P2887224 INFO Save best model: monitor(max)=0.964291
+2024-03-13 22:23:17,736 P2887224 INFO ************ Epoch=9 end ************
+2024-03-13 22:23:21,015 P2887224 INFO Train loss: 0.539099
+2024-03-13 22:23:21,015 P2887224 INFO Evaluation @epoch 10 - batch 141: 
+2024-03-13 22:23:22,821 P2887224 INFO ===
+2024-03-13 22:23:22,822 P2887224 INFO [Metrics] AUC: 0.964280 - logloss: 0.215606
+2024-03-13 22:23:22,822 P2887224 INFO Monitor(max)=0.964280 STOP!
+2024-03-13 22:23:22,822 P2887224 INFO Reduce learning rate on plateau: 0.000100
+2024-03-13 22:23:22,984 P2887224 INFO ************ Epoch=10 end ************
+2024-03-13 22:23:26,278 P2887224 INFO Train loss: 0.412421
+2024-03-13 22:23:26,278 P2887224 INFO Evaluation @epoch 11 - batch 141: 
+2024-03-13 22:23:28,091 P2887224 INFO ===
+2024-03-13 22:23:28,092 P2887224 INFO [Metrics] AUC: 0.969816 - logloss: 0.210524
+2024-03-13 22:23:28,092 P2887224 INFO Save best model: monitor(max)=0.969816
+2024-03-13 22:23:28,281 P2887224 INFO ************ Epoch=11 end ************
+2024-03-13 22:23:31,763 P2887224 INFO Train loss: 0.282268
+2024-03-13 22:23:31,763 P2887224 INFO Evaluation @epoch 12 - batch 141: 
+2024-03-13 22:23:33,456 P2887224 INFO ===
+2024-03-13 22:23:33,456 P2887224 INFO [Metrics] AUC: 0.971248 - logloss: 0.227249
+2024-03-13 22:23:33,457 P2887224 INFO Save best model: monitor(max)=0.971248
+2024-03-13 22:23:33,693 P2887224 INFO ************ Epoch=12 end ************
+2024-03-13 22:23:36,921 P2887224 INFO Train loss: 0.210450
+2024-03-13 22:23:36,921 P2887224 INFO Evaluation @epoch 13 - batch 141: 
+2024-03-13 22:23:38,694 P2887224 INFO ===
+2024-03-13 22:23:38,694 P2887224 INFO [Metrics] AUC: 0.971298 - logloss: 0.253082
+2024-03-13 22:23:38,695 P2887224 INFO Save best model: monitor(max)=0.971298
+2024-03-13 22:23:38,932 P2887224 INFO ************ Epoch=13 end ************
+2024-03-13 22:23:42,141 P2887224 INFO Train loss: 0.168441
+2024-03-13 22:23:42,141 P2887224 INFO Evaluation @epoch 14 - batch 141: 
+2024-03-13 22:23:43,504 P2887224 INFO ===
+2024-03-13 22:23:43,505 P2887224 INFO [Metrics] AUC: 0.971027 - logloss: 0.275897
+2024-03-13 22:23:43,505 P2887224 INFO Monitor(max)=0.971027 STOP!
+2024-03-13 22:23:43,505 P2887224 INFO Reduce learning rate on plateau: 0.000010
+2024-03-13 22:23:43,685 P2887224 INFO ************ Epoch=14 end ************
+2024-03-13 22:23:46,586 P2887224 INFO Train loss: 0.141257
+2024-03-13 22:23:46,586 P2887224 INFO Evaluation @epoch 15 - batch 141: 
+2024-03-13 22:23:48,117 P2887224 INFO ===
+2024-03-13 22:23:48,117 P2887224 INFO [Metrics] AUC: 0.971079 - logloss: 0.276705
+2024-03-13 22:23:48,118 P2887224 INFO Monitor(max)=0.971079 STOP!
+2024-03-13 22:23:48,118 P2887224 INFO Reduce learning rate on plateau: 0.000001
+2024-03-13 22:23:48,118 P2887224 INFO ********* Epoch==15 early stop *********
+2024-03-13 22:23:48,284 P2887224 INFO Training finished.
+2024-03-13 22:23:48,284 P2887224 INFO Load best model: /mnt/public/lhh/code/model_zoo/TF4CTR/TF4CTR_torch/checkpoints/Movielenslatest_x1_h5/TF4CTR_Movielens_054_0ed421b3.model
+2024-03-13 22:23:48,298 P2887224 INFO ****** Validation evaluation ******
+2024-03-13 22:23:49,945 P2887224 INFO ===
+2024-03-13 22:23:49,946 P2887224 INFO [Metrics] logloss: 0.253082 - AUC: 0.971298
+2024-03-13 22:23:50,033 P2887224 INFO ******** Test evaluation ********
+2024-03-13 22:23:50,033 P2887224 INFO Loading data...
+2024-03-13 22:23:50,033 P2887224 INFO Loading data from h5: ../../../data/Movielenslatest_x1_h5/test.h5
+2024-03-13 22:23:50,043 P2887224 INFO Test samples: total/200686, blocks/1
+2024-03-13 22:23:50,043 P2887224 INFO Loading test data done.
+2024-03-13 22:23:51,163 P2887224 INFO ===
+2024-03-13 22:23:51,163 P2887224 INFO [Metrics] logloss: 0.253438 - AUC: 0.971255

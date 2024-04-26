@@ -1,0 +1,2 @@
+ 20230417-223707,[command] python /root/autodl-tmp/model_zoo/DeepFM/DeepFM_torch/run_expid.py,[exp_id] DeepFM_default,[dataset_id] Avazu_x4_h5,[train] N.A.,[val] logloss: 0.371485 - AUC: 0.793928,[test] logloss: 0.371372 - AUC: 0.794109
+ 20230417-225446,[command] python /root/autodl-tmp/model_zoo/DeepFM/DeepFM_torch/run_expid.py,[exp_id] DeepFM_20,[dataset_id] Avazu_x4_h5,[train] N.A.,[val] logloss: 0.371942 - AUC: 0.793003,[test] logloss: 0.371844 - AUC: 0.793146

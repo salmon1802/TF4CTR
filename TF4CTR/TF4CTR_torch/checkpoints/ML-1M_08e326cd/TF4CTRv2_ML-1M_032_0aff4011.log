@@ -1,0 +1,146 @@
+2024-04-11 23:53:55,498 P3019956 INFO Params: {
+    "DFM": "VF",
+    "SSM": "GM",
+    "alpha": "0.25",
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "c": "0.9",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "ML-1M_08e326cd",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "easy_hidden_units": "[400]",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.01",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'int', 'name': 'group_id', 'preprocess': 'copy_from(UserID)', 'remap': False, 'type': 'meta'}, {'active': True, 'dtype': 'float', 'name': ['UserID', 'Gender', 'Age', 'Occupation', 'MovieID'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gamma": "1",
+    "gpu": "2",
+    "group_id": "group_id",
+    "hard_hidden_units": "[400, 400, 400]",
+    "hidden_activations": "relu",
+    "label_col": "{'dtype': 'float', 'name': 'Label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC', 'gAUC']",
+    "min_categr_count": "2",
+    "model": "TF4CTRv2",
+    "model_id": "TF4CTRv2_ML-1M_032_0aff4011",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'gAUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.1",
+    "net_regularizer": "0",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2023",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/ML-1M/test.csv",
+    "train_data": "../../../data/ML-1M/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/ML-1M/valid.csv",
+    "verbose": "1"
+}
+2024-04-11 23:53:55,499 P3019956 INFO Set up feature processor...
+2024-04-11 23:53:55,499 P3019956 WARNING Skip rebuilding ../../../data/ML-1M_08e326cd/feature_map.json. Please delete it manually if rebuilding is required.
+2024-04-11 23:53:55,499 P3019956 INFO Load feature_map from json: ../../../data/ML-1M_08e326cd/feature_map.json
+2024-04-11 23:53:55,499 P3019956 INFO Set column index...
+2024-04-11 23:53:55,499 P3019956 INFO Feature specs: {
+    "Age": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "Gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "MovieID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3547, 'vocab_size': 3548}",
+    "Occupation": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "UserID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6041, 'vocab_size': 6042}",
+    "group_id": "{'type': 'meta'}"
+}
+2024-04-11 23:54:00,098 P3019956 INFO Total number of parameters: 557380.
+2024-04-11 23:54:00,099 P3019956 INFO Loading data...
+2024-04-11 23:54:00,099 P3019956 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/train.h5
+2024-04-11 23:54:00,163 P3019956 INFO Train samples: total/800167, blocks/1
+2024-04-11 23:54:00,163 P3019956 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/valid.h5
+2024-04-11 23:54:00,169 P3019956 INFO Validation samples: total/100021, blocks/1
+2024-04-11 23:54:00,170 P3019956 INFO Loading train and validation data done.
+2024-04-11 23:54:00,170 P3019956 INFO Start training: 81 batches/epoch
+2024-04-11 23:54:00,170 P3019956 INFO ************ Epoch=1 start ************
+2024-04-11 23:54:03,150 P3019956 INFO Train loss: 1.067471
+2024-04-11 23:54:03,151 P3019956 INFO Evaluation @epoch 1 - batch 81: 
+2024-04-11 23:54:11,996 P3019956 INFO ===
+2024-04-11 23:54:11,996 P3019956 INFO [Metrics] AUC: 0.782707 - gAUC: 0.729496 - logloss: 0.604573
+2024-04-11 23:54:11,997 P3019956 INFO Save best model: monitor(max)=1.512203
+2024-04-11 23:54:12,132 P3019956 INFO ************ Epoch=1 end ************
+2024-04-11 23:54:15,301 P3019956 INFO Train loss: 1.000197
+2024-04-11 23:54:15,302 P3019956 INFO Evaluation @epoch 2 - batch 81: 
+2024-04-11 23:54:23,638 P3019956 INFO ===
+2024-04-11 23:54:23,638 P3019956 INFO [Metrics] AUC: 0.793319 - gAUC: 0.737600 - logloss: 0.539925
+2024-04-11 23:54:23,638 P3019956 INFO Save best model: monitor(max)=1.530919
+2024-04-11 23:54:23,814 P3019956 INFO ************ Epoch=2 end ************
+2024-04-11 23:54:26,419 P3019956 INFO Train loss: 0.984768
+2024-04-11 23:54:26,419 P3019956 INFO Evaluation @epoch 3 - batch 81: 
+2024-04-11 23:54:34,199 P3019956 INFO ===
+2024-04-11 23:54:34,209 P3019956 INFO [Metrics] AUC: 0.800180 - gAUC: 0.748954 - logloss: 0.537273
+2024-04-11 23:54:34,209 P3019956 INFO Save best model: monitor(max)=1.549134
+2024-04-11 23:54:34,373 P3019956 INFO ************ Epoch=3 end ************
+2024-04-11 23:54:36,515 P3019956 INFO Train loss: 0.970949
+2024-04-11 23:54:36,515 P3019956 INFO Evaluation @epoch 4 - batch 81: 
+2024-04-11 23:54:44,493 P3019956 INFO ===
+2024-04-11 23:54:44,493 P3019956 INFO [Metrics] AUC: 0.803782 - gAUC: 0.755177 - logloss: 0.531956
+2024-04-11 23:54:44,494 P3019956 INFO Save best model: monitor(max)=1.558959
+2024-04-11 23:54:44,674 P3019956 INFO ************ Epoch=4 end ************
+2024-04-11 23:54:47,372 P3019956 INFO Train loss: 0.962839
+2024-04-11 23:54:47,372 P3019956 INFO Evaluation @epoch 5 - batch 81: 
+2024-04-11 23:54:55,777 P3019956 INFO ===
+2024-04-11 23:54:55,778 P3019956 INFO [Metrics] AUC: 0.807264 - gAUC: 0.759769 - logloss: 0.524863
+2024-04-11 23:54:55,778 P3019956 INFO Save best model: monitor(max)=1.567033
+2024-04-11 23:54:55,918 P3019956 INFO ************ Epoch=5 end ************
+2024-04-11 23:54:58,539 P3019956 INFO Train loss: 0.959132
+2024-04-11 23:54:58,539 P3019956 INFO Evaluation @epoch 6 - batch 81: 
+2024-04-11 23:55:06,219 P3019956 INFO ===
+2024-04-11 23:55:06,219 P3019956 INFO [Metrics] AUC: 0.807296 - gAUC: 0.759062 - logloss: 0.524351
+2024-04-11 23:55:06,219 P3019956 INFO Monitor(max)=1.566357 STOP!
+2024-04-11 23:55:06,219 P3019956 INFO Reduce learning rate on plateau: 0.000100
+2024-04-11 23:55:06,329 P3019956 INFO ************ Epoch=6 end ************
+2024-04-11 23:55:08,699 P3019956 INFO Train loss: 0.903123
+2024-04-11 23:55:08,700 P3019956 INFO Evaluation @epoch 7 - batch 81: 
+2024-04-11 23:55:16,475 P3019956 INFO ===
+2024-04-11 23:55:16,476 P3019956 INFO [Metrics] AUC: 0.812274 - gAUC: 0.763118 - logloss: 0.521038
+2024-04-11 23:55:16,476 P3019956 INFO Save best model: monitor(max)=1.575392
+2024-04-11 23:55:16,626 P3019956 INFO ************ Epoch=7 end ************
+2024-04-11 23:55:19,303 P3019956 INFO Train loss: 0.883918
+2024-04-11 23:55:19,303 P3019956 INFO Evaluation @epoch 8 - batch 81: 
+2024-04-11 23:55:26,968 P3019956 INFO ===
+2024-04-11 23:55:26,969 P3019956 INFO [Metrics] AUC: 0.813935 - gAUC: 0.764873 - logloss: 0.520143
+2024-04-11 23:55:26,969 P3019956 INFO Save best model: monitor(max)=1.578808
+2024-04-11 23:55:27,191 P3019956 INFO ************ Epoch=8 end ************
+2024-04-11 23:55:30,060 P3019956 INFO Train loss: 0.872683
+2024-04-11 23:55:30,060 P3019956 INFO Evaluation @epoch 9 - batch 81: 
+2024-04-11 23:55:37,728 P3019956 INFO ===
+2024-04-11 23:55:37,728 P3019956 INFO [Metrics] AUC: 0.813742 - gAUC: 0.764611 - logloss: 0.521327
+2024-04-11 23:55:37,729 P3019956 INFO Monitor(max)=1.578353 STOP!
+2024-04-11 23:55:37,729 P3019956 INFO Reduce learning rate on plateau: 0.000010
+2024-04-11 23:55:37,850 P3019956 INFO ************ Epoch=9 end ************
+2024-04-11 23:55:40,540 P3019956 INFO Train loss: 0.857884
+2024-04-11 23:55:40,540 P3019956 INFO Evaluation @epoch 10 - batch 81: 
+2024-04-11 23:55:48,482 P3019956 INFO ===
+2024-04-11 23:55:48,483 P3019956 INFO [Metrics] AUC: 0.813765 - gAUC: 0.764173 - logloss: 0.521698
+2024-04-11 23:55:48,483 P3019956 INFO Monitor(max)=1.577939 STOP!
+2024-04-11 23:55:48,484 P3019956 INFO Reduce learning rate on plateau: 0.000001
+2024-04-11 23:55:48,484 P3019956 INFO ********* Epoch==10 early stop *********
+2024-04-11 23:55:48,711 P3019956 INFO Training finished.
+2024-04-11 23:55:48,711 P3019956 INFO Load best model: /mnt/public/lhh/code/model_zoo/TF4CTR/TF4CTR_torch/checkpoints/ML-1M_08e326cd/TF4CTRv2_ML-1M_032_0aff4011.model
+2024-04-11 23:55:48,716 P3019956 INFO ****** Validation evaluation ******
+2024-04-11 23:55:57,056 P3019956 INFO ===
+2024-04-11 23:55:57,056 P3019956 INFO [Metrics] logloss: 0.520342 - AUC: 0.813727 - gAUC: 0.764335
+2024-04-11 23:55:57,102 P3019956 INFO ******** Test evaluation ********
+2024-04-11 23:55:57,102 P3019956 INFO Loading data...
+2024-04-11 23:55:57,102 P3019956 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/test.h5
+2024-04-11 23:55:57,113 P3019956 INFO Test samples: total/100021, blocks/1
+2024-04-11 23:55:57,113 P3019956 INFO Loading test data done.
+2024-04-11 23:56:05,671 P3019956 INFO ===
+2024-04-11 23:56:05,671 P3019956 INFO [Metrics] logloss: 0.517738 - AUC: 0.814907 - gAUC: 0.767904

@@ -1,0 +1,89 @@
+Criteo_x4_10_h5:
+    data_format: h5
+    data_root: ../../../data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        fill_na: 0
+        na_value: 0
+        name: [I1, I2, I3, I4, I5, I6, I7, I8, I9, I10, I11, I12, I13]
+        preprocess: convert_to_bucket
+        type: categorical
+    -   active: true
+        dtype: str
+        fill_na: ''
+        na_value: ''
+        name: [C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16,
+            C17, C18, C19, C20, C21, C22, C23, C24, C25, C26]
+        type: categorical
+    label_col: {dtype: float, name: Label}
+    min_categr_count: 10
+    test_data: ../../../data/Criteo_x4_10_h5/test.h5
+    train_data: ../../../data/Criteo_x4_10_h5/train.h5
+    valid_data: ../../../data/Criteo_x4_10_h5/valid.h5
+
+Movielenslatest_x1_h5:
+    data_format: h5
+    data_root: ../../../data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        name: [user_id, item_id, tag_id]
+        type: categorical
+    label_col: {dtype: float, name: label}
+    min_categr_count: 2
+    test_data: ../../../data/Movielenslatest_x1_h5/test.h5
+    train_data: ../../../data/Movielenslatest_x1_h5/train.h5
+    valid_data: ../../../data/Movielenslatest_x1_h5/valid.h5
+
+
+Frappe_x1_h5:
+    data_format: h5
+    data_root: ../../../data/
+    feature_cols:
+    -   active: true
+        dtype: float
+        name: [user, item, daytime, weekday, isweekend, homework, cost, weather, country,
+            city]
+        type: categorical
+    label_col: {dtype: float, name: label}
+    min_categr_count: 2
+    test_data: ../../../data/Frappe_x1_h5/test.h5
+    train_data: ../../../data/Frappe_x1_h5/train.h5
+    valid_data: ../../../data/Frappe_x1_h5/valid.h5
+
+KKBox_x1_h5:
+    data_format: h5
+    data_root: ../../../data/
+    feature_cols:
+    -   active: true
+        dtype: str
+        name: [msno, song_id, source_system_tab, source_screen_name, source_type,
+            city, gender, registered_via, language]
+        type: categorical
+    - {active: true, dtype: str, encoder: MaskedSumPooling, max_len: 3, name: genre_ids,
+        type: sequence}
+    - {active: true, dtype: str, encoder: MaskedSumPooling, max_len: 3, name: artist_name,
+        type: sequence}
+    - {active: true, dtype: str, name: isrc, preprocess: extract_country_code, type: categorical}
+    - {active: true, dtype: str, name: bd, preprocess: bucketize_age, type: categorical}
+    label_col: {dtype: float, name: label}
+    min_categr_count: 2
+    test_data: ../../../data/KKBox_x1_h5/test.h5
+    train_data: ../../../data/KKBox_x1_h5/train.h5
+    valid_data: ../../../data/KKBox_x1_h5/valid.h5
+
+ML-1M:
+    data_format: csv
+    data_root: ../../../data/
+    feature_cols:
+        - { name: group_id, active: True, dtype: int, type: meta, preprocess: "copy_from(UserID)", remap: False }
+        - active: true
+          dtype: float
+          name: [ UserID, Gender, Age, Occupation, MovieID ]
+          type: categorical
+    label_col: { dtype: float, name: Label }
+    min_categr_count: 2
+    test_data: ../../../data/ML-1M/test.csv
+    train_data: ../../../data/ML-1M/train.csv
+    valid_data: ../../../data/ML-1M/valid.csv

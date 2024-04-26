@@ -1,0 +1,206 @@
+2024-04-11 23:24:55,737 P1539151 INFO Params: {
+    "DFM": "WSF",
+    "SSM": "MoE",
+    "alpha": "0.25",
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "c": "0.7",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "ML-1M_08e326cd",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "easy_hidden_units": "[400]",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.01",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'int', 'name': 'group_id', 'preprocess': 'copy_from(UserID)', 'remap': False, 'type': 'meta'}, {'active': True, 'dtype': 'float', 'name': ['UserID', 'Gender', 'Age', 'Occupation', 'MovieID'], 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gamma": "1",
+    "gpu": "2",
+    "group_id": "group_id",
+    "hard_hidden_units": "[400, 400, 400]",
+    "hidden_activations": "relu",
+    "label_col": "{'dtype': 'float', 'name': 'Label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC', 'gAUC']",
+    "min_categr_count": "2",
+    "model": "TF4CTRv2",
+    "model_id": "TF4CTRv2_ML-1M_006_f75f63f7",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'gAUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.2",
+    "net_regularizer": "0",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2023",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/ML-1M/test.csv",
+    "train_data": "../../../data/ML-1M/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/ML-1M/valid.csv",
+    "verbose": "1"
+}
+2024-04-11 23:24:55,739 P1539151 INFO Set up feature processor...
+2024-04-11 23:24:55,739 P1539151 WARNING Skip rebuilding ../../../data/ML-1M_08e326cd/feature_map.json. Please delete it manually if rebuilding is required.
+2024-04-11 23:24:55,739 P1539151 INFO Load feature_map from json: ../../../data/ML-1M_08e326cd/feature_map.json
+2024-04-11 23:24:55,740 P1539151 INFO Set column index...
+2024-04-11 23:24:55,740 P1539151 INFO Feature specs: {
+    "Age": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "Gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "MovieID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3547, 'vocab_size': 3548}",
+    "Occupation": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "UserID": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6041, 'vocab_size': 6042}",
+    "group_id": "{'type': 'meta'}"
+}
+2024-04-11 23:25:00,851 P1539151 INFO Total number of parameters: 560544.
+2024-04-11 23:25:00,851 P1539151 INFO Loading data...
+2024-04-11 23:25:00,851 P1539151 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/train.h5
+2024-04-11 23:25:00,957 P1539151 INFO Train samples: total/800167, blocks/1
+2024-04-11 23:25:00,957 P1539151 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/valid.h5
+2024-04-11 23:25:00,965 P1539151 INFO Validation samples: total/100021, blocks/1
+2024-04-11 23:25:00,966 P1539151 INFO Loading train and validation data done.
+2024-04-11 23:25:00,966 P1539151 INFO Start training: 81 batches/epoch
+2024-04-11 23:25:00,966 P1539151 INFO ************ Epoch=1 start ************
+2024-04-11 23:25:04,327 P1539151 INFO Train loss: 1.200562
+2024-04-11 23:25:04,327 P1539151 INFO Evaluation @epoch 1 - batch 81: 
+2024-04-11 23:25:12,139 P1539151 INFO ===
+2024-04-11 23:25:12,139 P1539151 INFO [Metrics] AUC: 0.783659 - gAUC: 0.731222 - logloss: 0.570315
+2024-04-11 23:25:12,139 P1539151 INFO Save best model: monitor(max)=1.514881
+2024-04-11 23:25:12,310 P1539151 INFO ************ Epoch=1 end ************
+2024-04-11 23:25:15,426 P1539151 INFO Train loss: 1.074111
+2024-04-11 23:25:15,427 P1539151 INFO Evaluation @epoch 2 - batch 81: 
+2024-04-11 23:25:22,970 P1539151 INFO ===
+2024-04-11 23:25:22,970 P1539151 INFO [Metrics] AUC: 0.790330 - gAUC: 0.734534 - logloss: 0.542978
+2024-04-11 23:25:22,971 P1539151 INFO Save best model: monitor(max)=1.524864
+2024-04-11 23:25:23,165 P1539151 INFO ************ Epoch=2 end ************
+2024-04-11 23:25:26,490 P1539151 INFO Train loss: 1.054155
+2024-04-11 23:25:26,491 P1539151 INFO Evaluation @epoch 3 - batch 81: 
+2024-04-11 23:25:34,426 P1539151 INFO ===
+2024-04-11 23:25:34,427 P1539151 INFO [Metrics] AUC: 0.793689 - gAUC: 0.737216 - logloss: 0.540613
+2024-04-11 23:25:34,427 P1539151 INFO Save best model: monitor(max)=1.530905
+2024-04-11 23:25:34,606 P1539151 INFO ************ Epoch=3 end ************
+2024-04-11 23:25:38,293 P1539151 INFO Train loss: 1.044166
+2024-04-11 23:25:38,294 P1539151 INFO Evaluation @epoch 4 - batch 81: 
+2024-04-11 23:25:47,064 P1539151 INFO ===
+2024-04-11 23:25:47,065 P1539151 INFO [Metrics] AUC: 0.795664 - gAUC: 0.740384 - logloss: 0.537075
+2024-04-11 23:25:47,065 P1539151 INFO Save best model: monitor(max)=1.536047
+2024-04-11 23:25:47,231 P1539151 INFO ************ Epoch=4 end ************
+2024-04-11 23:25:50,408 P1539151 INFO Train loss: 1.038812
+2024-04-11 23:25:50,408 P1539151 INFO Evaluation @epoch 5 - batch 81: 
+2024-04-11 23:25:57,870 P1539151 INFO ===
+2024-04-11 23:25:57,883 P1539151 INFO [Metrics] AUC: 0.798265 - gAUC: 0.745546 - logloss: 0.533581
+2024-04-11 23:25:57,883 P1539151 INFO Save best model: monitor(max)=1.543811
+2024-04-11 23:25:58,271 P1539151 INFO ************ Epoch=5 end ************
+2024-04-11 23:26:01,827 P1539151 INFO Train loss: 1.035281
+2024-04-11 23:26:01,828 P1539151 INFO Evaluation @epoch 6 - batch 81: 
+2024-04-11 23:26:10,718 P1539151 INFO ===
+2024-04-11 23:26:10,719 P1539151 INFO [Metrics] AUC: 0.800535 - gAUC: 0.749489 - logloss: 0.532554
+2024-04-11 23:26:10,719 P1539151 INFO Save best model: monitor(max)=1.550024
+2024-04-11 23:26:10,878 P1539151 INFO ************ Epoch=6 end ************
+2024-04-11 23:26:14,353 P1539151 INFO Train loss: 1.029593
+2024-04-11 23:26:14,353 P1539151 INFO Evaluation @epoch 7 - batch 81: 
+2024-04-11 23:26:21,570 P1539151 INFO ===
+2024-04-11 23:26:21,570 P1539151 INFO [Metrics] AUC: 0.803406 - gAUC: 0.753659 - logloss: 0.528983
+2024-04-11 23:26:21,570 P1539151 INFO Save best model: monitor(max)=1.557064
+2024-04-11 23:26:21,706 P1539151 INFO ************ Epoch=7 end ************
+2024-04-11 23:26:24,863 P1539151 INFO Train loss: 1.024272
+2024-04-11 23:26:24,864 P1539151 INFO Evaluation @epoch 8 - batch 81: 
+2024-04-11 23:26:33,157 P1539151 INFO ===
+2024-04-11 23:26:33,157 P1539151 INFO [Metrics] AUC: 0.805939 - gAUC: 0.756245 - logloss: 0.525959
+2024-04-11 23:26:33,157 P1539151 INFO Save best model: monitor(max)=1.562185
+2024-04-11 23:26:33,310 P1539151 INFO ************ Epoch=8 end ************
+2024-04-11 23:26:36,440 P1539151 INFO Train loss: 1.025000
+2024-04-11 23:26:36,440 P1539151 INFO Evaluation @epoch 9 - batch 81: 
+2024-04-11 23:26:45,030 P1539151 INFO ===
+2024-04-11 23:26:45,030 P1539151 INFO [Metrics] AUC: 0.806642 - gAUC: 0.756436 - logloss: 0.526069
+2024-04-11 23:26:45,030 P1539151 INFO Save best model: monitor(max)=1.563078
+2024-04-11 23:26:45,174 P1539151 INFO ************ Epoch=9 end ************
+2024-04-11 23:26:48,504 P1539151 INFO Train loss: 1.021266
+2024-04-11 23:26:48,504 P1539151 INFO Evaluation @epoch 10 - batch 81: 
+2024-04-11 23:26:57,914 P1539151 INFO ===
+2024-04-11 23:26:57,914 P1539151 INFO [Metrics] AUC: 0.806816 - gAUC: 0.757208 - logloss: 0.527133
+2024-04-11 23:26:57,915 P1539151 INFO Save best model: monitor(max)=1.564024
+2024-04-11 23:26:58,050 P1539151 INFO ************ Epoch=10 end ************
+2024-04-11 23:27:01,153 P1539151 INFO Train loss: 1.021424
+2024-04-11 23:27:01,153 P1539151 INFO Evaluation @epoch 11 - batch 81: 
+2024-04-11 23:27:09,281 P1539151 INFO ===
+2024-04-11 23:27:09,281 P1539151 INFO [Metrics] AUC: 0.808849 - gAUC: 0.759395 - logloss: 0.522454
+2024-04-11 23:27:09,282 P1539151 INFO Save best model: monitor(max)=1.568245
+2024-04-11 23:27:09,514 P1539151 INFO ************ Epoch=11 end ************
+2024-04-11 23:27:12,761 P1539151 INFO Train loss: 1.019531
+2024-04-11 23:27:12,761 P1539151 INFO Evaluation @epoch 12 - batch 81: 
+2024-04-11 23:27:22,159 P1539151 INFO ===
+2024-04-11 23:27:22,160 P1539151 INFO [Metrics] AUC: 0.808927 - gAUC: 0.760868 - logloss: 0.522806
+2024-04-11 23:27:22,160 P1539151 INFO Save best model: monitor(max)=1.569795
+2024-04-11 23:27:22,324 P1539151 INFO ************ Epoch=12 end ************
+2024-04-11 23:27:25,414 P1539151 INFO Train loss: 1.018605
+2024-04-11 23:27:25,414 P1539151 INFO Evaluation @epoch 13 - batch 81: 
+2024-04-11 23:27:33,718 P1539151 INFO ===
+2024-04-11 23:27:33,718 P1539151 INFO [Metrics] AUC: 0.807952 - gAUC: 0.759962 - logloss: 0.524589
+2024-04-11 23:27:33,719 P1539151 INFO Monitor(max)=1.567914 STOP!
+2024-04-11 23:27:33,719 P1539151 INFO Reduce learning rate on plateau: 0.000100
+2024-04-11 23:27:33,832 P1539151 INFO ************ Epoch=13 end ************
+2024-04-11 23:27:37,381 P1539151 INFO Train loss: 0.975125
+2024-04-11 23:27:37,381 P1539151 INFO Evaluation @epoch 14 - batch 81: 
+2024-04-11 23:27:46,276 P1539151 INFO ===
+2024-04-11 23:27:46,277 P1539151 INFO [Metrics] AUC: 0.811499 - gAUC: 0.763096 - logloss: 0.523094
+2024-04-11 23:27:46,277 P1539151 INFO Save best model: monitor(max)=1.574595
+2024-04-11 23:27:46,453 P1539151 INFO ************ Epoch=14 end ************
+2024-04-11 23:27:49,525 P1539151 INFO Train loss: 0.957129
+2024-04-11 23:27:49,525 P1539151 INFO Evaluation @epoch 15 - batch 81: 
+2024-04-11 23:27:58,407 P1539151 INFO ===
+2024-04-11 23:27:58,407 P1539151 INFO [Metrics] AUC: 0.812700 - gAUC: 0.764586 - logloss: 0.520903
+2024-04-11 23:27:58,408 P1539151 INFO Save best model: monitor(max)=1.577286
+2024-04-11 23:27:58,578 P1539151 INFO ************ Epoch=15 end ************
+2024-04-11 23:28:01,755 P1539151 INFO Train loss: 0.947036
+2024-04-11 23:28:01,755 P1539151 INFO Evaluation @epoch 16 - batch 81: 
+2024-04-11 23:28:10,896 P1539151 INFO ===
+2024-04-11 23:28:10,896 P1539151 INFO [Metrics] AUC: 0.813100 - gAUC: 0.764740 - logloss: 0.521090
+2024-04-11 23:28:10,896 P1539151 INFO Save best model: monitor(max)=1.577840
+2024-04-11 23:28:11,069 P1539151 INFO ************ Epoch=16 end ************
+2024-04-11 23:28:14,321 P1539151 INFO Train loss: 0.940162
+2024-04-11 23:28:14,321 P1539151 INFO Evaluation @epoch 17 - batch 81: 
+2024-04-11 23:28:22,208 P1539151 INFO ===
+2024-04-11 23:28:22,209 P1539151 INFO [Metrics] AUC: 0.813220 - gAUC: 0.764838 - logloss: 0.522046
+2024-04-11 23:28:22,209 P1539151 INFO Save best model: monitor(max)=1.578058
+2024-04-11 23:28:22,331 P1539151 INFO ************ Epoch=17 end ************
+2024-04-11 23:28:25,727 P1539151 INFO Train loss: 0.933523
+2024-04-11 23:28:25,727 P1539151 INFO Evaluation @epoch 18 - batch 81: 
+2024-04-11 23:28:32,871 P1539151 INFO ===
+2024-04-11 23:28:32,871 P1539151 INFO [Metrics] AUC: 0.813301 - gAUC: 0.764984 - logloss: 0.522869
+2024-04-11 23:28:32,871 P1539151 INFO Save best model: monitor(max)=1.578285
+2024-04-11 23:28:32,989 P1539151 INFO ************ Epoch=18 end ************
+2024-04-11 23:28:35,846 P1539151 INFO Train loss: 0.929436
+2024-04-11 23:28:35,847 P1539151 INFO Evaluation @epoch 19 - batch 81: 
+2024-04-11 23:28:44,685 P1539151 INFO ===
+2024-04-11 23:28:44,686 P1539151 INFO [Metrics] AUC: 0.813211 - gAUC: 0.764621 - logloss: 0.522958
+2024-04-11 23:28:44,686 P1539151 INFO Monitor(max)=1.577832 STOP!
+2024-04-11 23:28:44,686 P1539151 INFO Reduce learning rate on plateau: 0.000010
+2024-04-11 23:28:44,846 P1539151 INFO ************ Epoch=19 end ************
+2024-04-11 23:28:48,103 P1539151 INFO Train loss: 0.914670
+2024-04-11 23:28:48,104 P1539151 INFO Evaluation @epoch 20 - batch 81: 
+2024-04-11 23:28:55,873 P1539151 INFO ===
+2024-04-11 23:28:55,874 P1539151 INFO [Metrics] AUC: 0.813233 - gAUC: 0.764737 - logloss: 0.524846
+2024-04-11 23:28:55,874 P1539151 INFO Monitor(max)=1.577970 STOP!
+2024-04-11 23:28:55,874 P1539151 INFO Reduce learning rate on plateau: 0.000001
+2024-04-11 23:28:55,875 P1539151 INFO ********* Epoch==20 early stop *********
+2024-04-11 23:28:56,019 P1539151 INFO Training finished.
+2024-04-11 23:28:56,019 P1539151 INFO Load best model: /mnt/public/lhh/code/model_zoo/TF4CTR/TF4CTR_torch/checkpoints/ML-1M_08e326cd/TF4CTRv2_ML-1M_006_f75f63f7.model
+2024-04-11 23:28:56,030 P1539151 INFO ****** Validation evaluation ******
+2024-04-11 23:29:04,268 P1539151 INFO ===
+2024-04-11 23:29:04,268 P1539151 INFO [Metrics] logloss: 0.522869 - AUC: 0.813301 - gAUC: 0.764984
+2024-04-11 23:29:04,336 P1539151 INFO ******** Test evaluation ********
+2024-04-11 23:29:04,336 P1539151 INFO Loading data...
+2024-04-11 23:29:04,336 P1539151 INFO Loading data from h5: ../../../data/ML-1M_08e326cd/test.h5
+2024-04-11 23:29:04,345 P1539151 INFO Test samples: total/100021, blocks/1
+2024-04-11 23:29:04,345 P1539151 INFO Loading test data done.
+2024-04-11 23:29:12,202 P1539151 INFO ===
+2024-04-11 23:29:12,203 P1539151 INFO [Metrics] logloss: 0.523072 - AUC: 0.812758 - gAUC: 0.765659

@@ -1,0 +1,238 @@
+2024-04-11 21:21:54,726 P2928333 INFO Params: {
+    "DFM": "WSF",
+    "SSM": "SER",
+    "alpha": "0.25",
+    "batch_norm": "True",
+    "batch_size": "10000",
+    "c": "0.7",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "KKBox_x1_csv_9dad49f7",
+    "debug_mode": "False",
+    "early_stop_patience": "2",
+    "easy_hidden_units": "[400, 400]",
+    "embedding_dim": "16",
+    "embedding_regularizer": "0.0005",
+    "epochs": "100",
+    "eval_steps": "None",
+    "feature_cols": "[{'active': True, 'dtype': 'int', 'name': 'group_id', 'preprocess': 'copy_from(msno)', 'remap': False, 'type': 'meta'}, {'active': True, 'dtype': 'str', 'name': ['msno', 'song_id', 'source_system_tab', 'source_screen_name', 'source_type', 'city', 'gender', 'registered_via', 'language'], 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'encoder': 'MaskedSumPooling', 'max_len': 3, 'name': 'genre_ids', 'type': 'sequence'}, {'active': True, 'dtype': 'str', 'encoder': 'MaskedSumPooling', 'max_len': 3, 'name': 'artist_name', 'type': 'sequence'}, {'active': True, 'dtype': 'str', 'name': 'isrc', 'preprocess': 'extract_country_code', 'type': 'categorical'}, {'active': True, 'dtype': 'str', 'name': 'bd', 'preprocess': 'bucketize_age', 'type': 'categorical'}]",
+    "feature_config": "None",
+    "feature_specs": "None",
+    "gamma": "1",
+    "gpu": "0",
+    "group_id": "group_id",
+    "hard_hidden_units": "[400, 400, 400]",
+    "hidden_activations": "relu",
+    "label_col": "{'dtype': 'float', 'name': 'label'}",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC', 'gAUC']",
+    "min_categr_count": "2",
+    "model": "TF4CTRv2",
+    "model_id": "TF4CTRv2_KKBox_031_8b997ba9",
+    "model_root": "./checkpoints/",
+    "monitor": "{'AUC': 1, 'gAUC': 1, 'logloss': 0}",
+    "monitor_mode": "max",
+    "net_dropout": "0.2",
+    "net_regularizer": "0",
+    "num_workers": "8",
+    "optimizer": "adam",
+    "pickle_feature_encoder": "True",
+    "save_best_only": "True",
+    "seed": "2023",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/KKBox_x1/test.csv",
+    "train_data": "../../../data/KKBox_x1/train.csv",
+    "use_features": "None",
+    "valid_data": "../../../data/KKBox_x1/valid.csv",
+    "verbose": "1"
+}
+2024-04-11 21:21:54,728 P2928333 INFO Set up feature processor...
+2024-04-11 21:21:54,728 P2928333 WARNING Skip rebuilding ../../../data/KKBox_x1_csv_9dad49f7/feature_map.json. Please delete it manually if rebuilding is required.
+2024-04-11 21:21:54,728 P2928333 INFO Load feature_map from json: ../../../data/KKBox_x1_csv_9dad49f7/feature_map.json
+2024-04-11 21:21:54,729 P2928333 INFO Set column index...
+2024-04-11 21:21:54,729 P2928333 INFO Feature specs: {
+    "artist_name": "{'source': '', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'oov_idx': 25368, 'vocab_size': 25369, 'max_len': 3}",
+    "bd": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 8, 'vocab_size': 9}",
+    "city": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 22, 'vocab_size': 23}",
+    "gender": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 3, 'vocab_size': 4}",
+    "genre_ids": "{'source': '', 'type': 'sequence', 'feature_encoder': 'layers.MaskedAveragePooling()', 'padding_idx': 0, 'oov_idx': 482, 'vocab_size': 483, 'max_len': 3}",
+    "group_id": "{'type': 'meta'}",
+    "isrc": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 96, 'vocab_size': 97}",
+    "language": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 11, 'vocab_size': 12}",
+    "msno": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 29505, 'vocab_size': 29506}",
+    "registered_via": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 6, 'vocab_size': 7}",
+    "song_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 172296, 'vocab_size': 172297}",
+    "source_screen_name": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 21, 'vocab_size': 22}",
+    "source_system_tab": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 9, 'vocab_size': 10}",
+    "source_type": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'oov_idx': 13, 'vocab_size': 14}"
+}
+2024-04-11 21:22:03,129 P2928333 INFO Total number of parameters: 6080076.
+2024-04-11 21:22:03,130 P2928333 INFO Loading data...
+2024-04-11 21:22:03,130 P2928333 INFO Loading data from h5: ../../../data/KKBox_x1_csv_9dad49f7/train.h5
+2024-04-11 21:22:04,847 P2928333 INFO Train samples: total/5901932, blocks/1
+2024-04-11 21:22:04,847 P2928333 INFO Loading data from h5: ../../../data/KKBox_x1_csv_9dad49f7/valid.h5
+2024-04-11 21:22:05,071 P2928333 INFO Validation samples: total/737743, blocks/1
+2024-04-11 21:22:05,072 P2928333 INFO Loading train and validation data done.
+2024-04-11 21:22:05,072 P2928333 INFO Start training: 591 batches/epoch
+2024-04-11 21:22:05,072 P2928333 INFO ************ Epoch=1 start ************
+2024-04-11 21:22:47,661 P2928333 INFO Train loss: 1.113703
+2024-04-11 21:22:47,661 P2928333 INFO Evaluation @epoch 1 - batch 591: 
+2024-04-11 21:23:06,696 P2928333 INFO ===
+2024-04-11 21:23:06,697 P2928333 INFO [Metrics] AUC: 0.801628 - gAUC: 0.722022 - logloss: 0.539532
+2024-04-11 21:23:06,697 P2928333 INFO Save best model: monitor(max)=1.523651
+2024-04-11 21:23:06,886 P2928333 INFO ************ Epoch=1 end ************
+2024-04-11 21:23:51,783 P2928333 INFO Train loss: 1.057470
+2024-04-11 21:23:51,783 P2928333 INFO Evaluation @epoch 2 - batch 591: 
+2024-04-11 21:24:09,294 P2928333 INFO ===
+2024-04-11 21:24:09,295 P2928333 INFO [Metrics] AUC: 0.812610 - gAUC: 0.738400 - logloss: 0.527036
+2024-04-11 21:24:09,295 P2928333 INFO Save best model: monitor(max)=1.551011
+2024-04-11 21:24:09,576 P2928333 INFO ************ Epoch=2 end ************
+2024-04-11 21:24:48,512 P2928333 INFO Train loss: 1.050327
+2024-04-11 21:24:48,512 P2928333 INFO Evaluation @epoch 3 - batch 591: 
+2024-04-11 21:25:05,075 P2928333 INFO ===
+2024-04-11 21:25:05,075 P2928333 INFO [Metrics] AUC: 0.818247 - gAUC: 0.745876 - logloss: 0.520312
+2024-04-11 21:25:05,076 P2928333 INFO Save best model: monitor(max)=1.564124
+2024-04-11 21:25:05,372 P2928333 INFO ************ Epoch=3 end ************
+2024-04-11 21:25:46,641 P2928333 INFO Train loss: 1.046992
+2024-04-11 21:25:46,641 P2928333 INFO Evaluation @epoch 4 - batch 591: 
+2024-04-11 21:26:04,321 P2928333 INFO ===
+2024-04-11 21:26:04,321 P2928333 INFO [Metrics] AUC: 0.822038 - gAUC: 0.751266 - logloss: 0.516189
+2024-04-11 21:26:04,322 P2928333 INFO Save best model: monitor(max)=1.573304
+2024-04-11 21:26:04,597 P2928333 INFO ************ Epoch=4 end ************
+2024-04-11 21:26:45,094 P2928333 INFO Train loss: 1.043758
+2024-04-11 21:26:45,095 P2928333 INFO Evaluation @epoch 5 - batch 591: 
+2024-04-11 21:27:02,514 P2928333 INFO ===
+2024-04-11 21:27:02,514 P2928333 INFO [Metrics] AUC: 0.824309 - gAUC: 0.753482 - logloss: 0.513372
+2024-04-11 21:27:02,514 P2928333 INFO Save best model: monitor(max)=1.577791
+2024-04-11 21:27:02,880 P2928333 INFO ************ Epoch=5 end ************
+2024-04-11 21:27:45,375 P2928333 INFO Train loss: 1.041197
+2024-04-11 21:27:45,376 P2928333 INFO Evaluation @epoch 6 - batch 591: 
+2024-04-11 21:28:02,404 P2928333 INFO ===
+2024-04-11 21:28:02,404 P2928333 INFO [Metrics] AUC: 0.825842 - gAUC: 0.755554 - logloss: 0.512003
+2024-04-11 21:28:02,405 P2928333 INFO Save best model: monitor(max)=1.581396
+2024-04-11 21:28:02,719 P2928333 INFO ************ Epoch=6 end ************
+2024-04-11 21:28:43,194 P2928333 INFO Train loss: 1.038728
+2024-04-11 21:28:43,194 P2928333 INFO Evaluation @epoch 7 - batch 591: 
+2024-04-11 21:28:58,719 P2928333 INFO ===
+2024-04-11 21:28:58,720 P2928333 INFO [Metrics] AUC: 0.827462 - gAUC: 0.757450 - logloss: 0.508984
+2024-04-11 21:28:58,720 P2928333 INFO Save best model: monitor(max)=1.584912
+2024-04-11 21:28:59,077 P2928333 INFO ************ Epoch=7 end ************
+2024-04-11 21:29:39,461 P2928333 INFO Train loss: 1.036478
+2024-04-11 21:29:39,461 P2928333 INFO Evaluation @epoch 8 - batch 591: 
+2024-04-11 21:29:56,307 P2928333 INFO ===
+2024-04-11 21:29:56,307 P2928333 INFO [Metrics] AUC: 0.828535 - gAUC: 0.758963 - logloss: 0.507818
+2024-04-11 21:29:56,308 P2928333 INFO Save best model: monitor(max)=1.587498
+2024-04-11 21:29:56,597 P2928333 INFO ************ Epoch=8 end ************
+2024-04-11 21:30:38,780 P2928333 INFO Train loss: 1.034483
+2024-04-11 21:30:38,780 P2928333 INFO Evaluation @epoch 9 - batch 591: 
+2024-04-11 21:30:55,318 P2928333 INFO ===
+2024-04-11 21:30:55,318 P2928333 INFO [Metrics] AUC: 0.828882 - gAUC: 0.758855 - logloss: 0.507216
+2024-04-11 21:30:55,319 P2928333 INFO Save best model: monitor(max)=1.587737
+2024-04-11 21:30:55,637 P2928333 INFO ************ Epoch=9 end ************
+2024-04-11 21:31:37,897 P2928333 INFO Train loss: 1.032896
+2024-04-11 21:31:37,898 P2928333 INFO Evaluation @epoch 10 - batch 591: 
+2024-04-11 21:31:54,603 P2928333 INFO ===
+2024-04-11 21:31:54,604 P2928333 INFO [Metrics] AUC: 0.830112 - gAUC: 0.760348 - logloss: 0.505609
+2024-04-11 21:31:54,604 P2928333 INFO Save best model: monitor(max)=1.590461
+2024-04-11 21:31:54,899 P2928333 INFO ************ Epoch=10 end ************
+2024-04-11 21:32:37,738 P2928333 INFO Train loss: 1.031286
+2024-04-11 21:32:37,738 P2928333 INFO Evaluation @epoch 11 - batch 591: 
+2024-04-11 21:32:56,192 P2928333 INFO ===
+2024-04-11 21:32:56,193 P2928333 INFO [Metrics] AUC: 0.830199 - gAUC: 0.760703 - logloss: 0.505441
+2024-04-11 21:32:56,193 P2928333 INFO Save best model: monitor(max)=1.590902
+2024-04-11 21:32:56,463 P2928333 INFO ************ Epoch=11 end ************
+2024-04-11 21:33:40,947 P2928333 INFO Train loss: 1.029948
+2024-04-11 21:33:40,947 P2928333 INFO Evaluation @epoch 12 - batch 591: 
+2024-04-11 21:33:58,402 P2928333 INFO ===
+2024-04-11 21:33:58,402 P2928333 INFO [Metrics] AUC: 0.830994 - gAUC: 0.761180 - logloss: 0.504380
+2024-04-11 21:33:58,403 P2928333 INFO Save best model: monitor(max)=1.592174
+2024-04-11 21:33:58,718 P2928333 INFO ************ Epoch=12 end ************
+2024-04-11 21:34:42,888 P2928333 INFO Train loss: 1.028914
+2024-04-11 21:34:42,889 P2928333 INFO Evaluation @epoch 13 - batch 591: 
+2024-04-11 21:34:58,153 P2928333 INFO ===
+2024-04-11 21:34:58,153 P2928333 INFO [Metrics] AUC: 0.831156 - gAUC: 0.761169 - logloss: 0.504260
+2024-04-11 21:34:58,154 P2928333 INFO Save best model: monitor(max)=1.592325
+2024-04-11 21:34:58,442 P2928333 INFO ************ Epoch=13 end ************
+2024-04-11 21:35:40,964 P2928333 INFO Train loss: 1.027648
+2024-04-11 21:35:40,965 P2928333 INFO Evaluation @epoch 14 - batch 591: 
+2024-04-11 21:35:54,747 P2928333 INFO ===
+2024-04-11 21:35:54,747 P2928333 INFO [Metrics] AUC: 0.831344 - gAUC: 0.761749 - logloss: 0.504201
+2024-04-11 21:35:54,748 P2928333 INFO Save best model: monitor(max)=1.593092
+2024-04-11 21:35:55,026 P2928333 INFO ************ Epoch=14 end ************
+2024-04-11 21:36:34,828 P2928333 INFO Train loss: 1.026864
+2024-04-11 21:36:34,828 P2928333 INFO Evaluation @epoch 15 - batch 591: 
+2024-04-11 21:36:49,617 P2928333 INFO ===
+2024-04-11 21:36:49,617 P2928333 INFO [Metrics] AUC: 0.831784 - gAUC: 0.762279 - logloss: 0.503719
+2024-04-11 21:36:49,618 P2928333 INFO Save best model: monitor(max)=1.594062
+2024-04-11 21:36:49,934 P2928333 INFO ************ Epoch=15 end ************
+2024-04-11 21:37:35,575 P2928333 INFO Train loss: 1.026301
+2024-04-11 21:37:35,576 P2928333 INFO Evaluation @epoch 16 - batch 591: 
+2024-04-11 21:37:51,624 P2928333 INFO ===
+2024-04-11 21:37:51,624 P2928333 INFO [Metrics] AUC: 0.832053 - gAUC: 0.762616 - logloss: 0.502867
+2024-04-11 21:37:51,625 P2928333 INFO Save best model: monitor(max)=1.594669
+2024-04-11 21:37:51,932 P2928333 INFO ************ Epoch=16 end ************
+2024-04-11 21:38:36,593 P2928333 INFO Train loss: 1.025441
+2024-04-11 21:38:36,593 P2928333 INFO Evaluation @epoch 17 - batch 591: 
+2024-04-11 21:38:52,105 P2928333 INFO ===
+2024-04-11 21:38:52,106 P2928333 INFO [Metrics] AUC: 0.832675 - gAUC: 0.763019 - logloss: 0.502147
+2024-04-11 21:38:52,106 P2928333 INFO Save best model: monitor(max)=1.595694
+2024-04-11 21:38:52,392 P2928333 INFO ************ Epoch=17 end ************
+2024-04-11 21:39:37,634 P2928333 INFO Train loss: 1.024783
+2024-04-11 21:39:37,634 P2928333 INFO Evaluation @epoch 18 - batch 591: 
+2024-04-11 21:39:51,988 P2928333 INFO ===
+2024-04-11 21:39:51,988 P2928333 INFO [Metrics] AUC: 0.833041 - gAUC: 0.763569 - logloss: 0.501719
+2024-04-11 21:39:51,989 P2928333 INFO Save best model: monitor(max)=1.596610
+2024-04-11 21:39:52,285 P2928333 INFO ************ Epoch=18 end ************
+2024-04-11 21:40:35,941 P2928333 INFO Train loss: 1.024280
+2024-04-11 21:40:35,942 P2928333 INFO Evaluation @epoch 19 - batch 591: 
+2024-04-11 21:40:52,265 P2928333 INFO ===
+2024-04-11 21:40:52,265 P2928333 INFO [Metrics] AUC: 0.832784 - gAUC: 0.763254 - logloss: 0.502248
+2024-04-11 21:40:52,265 P2928333 INFO Monitor(max)=1.596038 STOP!
+2024-04-11 21:40:52,265 P2928333 INFO Reduce learning rate on plateau: 0.000100
+2024-04-11 21:40:52,434 P2928333 INFO ************ Epoch=19 end ************
+2024-04-11 21:41:39,258 P2928333 INFO Train loss: 0.951823
+2024-04-11 21:41:39,259 P2928333 INFO Evaluation @epoch 20 - batch 591: 
+2024-04-11 21:41:54,945 P2928333 INFO ===
+2024-04-11 21:41:54,945 P2928333 INFO [Metrics] AUC: 0.841817 - gAUC: 0.771278 - logloss: 0.492417
+2024-04-11 21:41:54,946 P2928333 INFO Save best model: monitor(max)=1.613094
+2024-04-11 21:41:55,300 P2928333 INFO ************ Epoch=20 end ************
+2024-04-11 21:42:41,635 P2928333 INFO Train loss: 0.915660
+2024-04-11 21:42:41,635 P2928333 INFO Evaluation @epoch 21 - batch 591: 
+2024-04-11 21:42:56,958 P2928333 INFO ===
+2024-04-11 21:42:56,958 P2928333 INFO [Metrics] AUC: 0.843841 - gAUC: 0.773543 - logloss: 0.490334
+2024-04-11 21:42:56,959 P2928333 INFO Save best model: monitor(max)=1.617384
+2024-04-11 21:42:57,248 P2928333 INFO ************ Epoch=21 end ************
+2024-04-11 21:43:42,856 P2928333 INFO Train loss: 0.896235
+2024-04-11 21:43:42,856 P2928333 INFO Evaluation @epoch 22 - batch 591: 
+2024-04-11 21:43:59,214 P2928333 INFO ===
+2024-04-11 21:43:59,215 P2928333 INFO [Metrics] AUC: 0.844174 - gAUC: 0.773912 - logloss: 0.491483
+2024-04-11 21:43:59,215 P2928333 INFO Save best model: monitor(max)=1.618087
+2024-04-11 21:43:59,543 P2928333 INFO ************ Epoch=22 end ************
+2024-04-11 21:44:44,513 P2928333 INFO Train loss: 0.880769
+2024-04-11 21:44:44,514 P2928333 INFO Evaluation @epoch 23 - batch 591: 
+2024-04-11 21:44:59,643 P2928333 INFO ===
+2024-04-11 21:44:59,643 P2928333 INFO [Metrics] AUC: 0.843618 - gAUC: 0.773455 - logloss: 0.494100
+2024-04-11 21:44:59,644 P2928333 INFO Monitor(max)=1.617073 STOP!
+2024-04-11 21:44:59,644 P2928333 INFO Reduce learning rate on plateau: 0.000010
+2024-04-11 21:44:59,819 P2928333 INFO ************ Epoch=23 end ************
+2024-04-11 21:45:44,150 P2928333 INFO Train loss: 0.845346
+2024-04-11 21:45:44,150 P2928333 INFO Evaluation @epoch 24 - batch 591: 
+2024-04-11 21:45:59,270 P2928333 INFO ===
+2024-04-11 21:45:59,271 P2928333 INFO [Metrics] AUC: 0.842641 - gAUC: 0.772674 - logloss: 0.502718
+2024-04-11 21:45:59,271 P2928333 INFO Monitor(max)=1.615315 STOP!
+2024-04-11 21:45:59,271 P2928333 INFO Reduce learning rate on plateau: 0.000001
+2024-04-11 21:45:59,271 P2928333 INFO ********* Epoch==24 early stop *********
+2024-04-11 21:45:59,431 P2928333 INFO Training finished.
+2024-04-11 21:45:59,431 P2928333 INFO Load best model: /mnt/public/lhh/code/model_zoo/TF4CTR/TF4CTR_torch/checkpoints/KKBox_x1_csv_9dad49f7/TF4CTRv2_KKBox_031_8b997ba9.model
+2024-04-11 21:45:59,459 P2928333 INFO ****** Validation evaluation ******
+2024-04-11 21:46:17,245 P2928333 INFO ===
+2024-04-11 21:46:17,246 P2928333 INFO [Metrics] logloss: 0.491483 - AUC: 0.844174 - gAUC: 0.773912
+2024-04-11 21:46:17,287 P2928333 INFO ******** Test evaluation ********
+2024-04-11 21:46:17,287 P2928333 INFO Loading data...
+2024-04-11 21:46:17,287 P2928333 INFO Loading data from h5: ../../../data/KKBox_x1_csv_9dad49f7/test.h5
+2024-04-11 21:46:17,484 P2928333 INFO Test samples: total/737743, blocks/1
+2024-04-11 21:46:17,484 P2928333 INFO Loading test data done.
+2024-04-11 21:46:31,601 P2928333 INFO ===
+2024-04-11 21:46:31,601 P2928333 INFO [Metrics] logloss: 0.490707 - AUC: 0.844720 - gAUC: 0.776022

@@ -1,0 +1,16 @@
+base_config: ./config/
+base_expid: TF4CTR_KKBox
+dataset_id: KKBox_x1_h5
+
+tuner_space:
+    model_root: './checkpoints/'
+    batch_size: 10000
+    hard_hidden_units: [[400, 400, 400]]
+    easy_hidden_units: [[400, 400]]
+    gamma: [1, 2, 3]
+    c: [0.6, 0.8]
+    alpha: [0.15, 0.25, 0.35, 0.45, 0.55]
+    net_dropout: [0.1, 0.2, 0.3]
+    seed: 2024
+    num_workers: 6
+
