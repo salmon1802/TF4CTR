@@ -77,32 +77,6 @@ def get_loss(loss):
                 raise NotImplementedError("loss={} is not supported.".format(loss))
     return loss_fn
 
-def FocalLoss(y_pred, y_true, gamma=2, reduction='mean'):
-    loss = torch.functional.F.binary_cross_entropy(y_pred, y_true, reduction='none')
-    p_t = y_true * y_pred + (1 - y_true) * (1 - y_pred)
-    modulating_factor = (1.0 - p_t) ** gamma
-    loss = loss * modulating_factor
-
-    if reduction == 'mean':
-        return loss.mean()
-    elif reduction == 'sum':
-        return loss.sum()
-    else:  # 'none'
-        return loss
-
-def R_CE_Loss(y_pred, y_true, gamma=0.01, reduction='mean'):
-    loss = torch.functional.F.binary_cross_entropy(y_pred, y_true, reduction='none')
-    p_t = (y_true * y_pred + (1 - y_true) * (1 - y_pred)).detach()
-    modulating_factor = p_t ** gamma
-    loss *= modulating_factor
-
-    if reduction == 'mean':
-        return loss.mean()
-    elif reduction == 'sum':
-        return loss.sum()
-    else:  # 'none'
-        return loss
-
 def get_regularizer(reg):
     reg_pair = []  # of tuples (p_norm, weight)
     if isinstance(reg, float):
