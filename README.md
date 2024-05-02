@@ -2,7 +2,8 @@ If you have any questions, feel free to ask!  :)
 # TF4CTR: Twin Focus Framework for CTR Prediction via Adaptive Sample Differentiation
 
 ## Model Overview
-![image](https://github.com/salmon1802/TF4CTR/assets/73091798/2b3aada7-0a54-40a5-98cf-16affb1dc18e)
+![image](https://github.com/salmon1802/TF4CTR/assets/73091798/a59f32b3-af0a-4bdf-aecb-46ac68b6675b)
+
 
 
 
