@@ -122,8 +122,6 @@ class TF4CTRv2(BaseModel):
         loss = loss + TFLoss
         return loss
 
-    # Since the AUC is not sensitive to positive and negative samples,
-    # we tried to remove alpha, which improved the effect
     def TFLoss(self, y_easy, y_hard, y_true, c=0.8, gamma=2, alpha=0.25, reduction='mean'):
         assert type is not None, "Missing type parameter. You can choose between easy or hard."
         # y_pred should be 0~1 value
