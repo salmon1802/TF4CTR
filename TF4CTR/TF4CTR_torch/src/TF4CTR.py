@@ -95,7 +95,6 @@ class TF4CTR(BaseModel):
         return loss
 
     def TFLoss(self, y_easy, y_hard, y_true, c=0.8, gamma=2, alpha=0.25, reduction='mean'):
-        assert type is not None, "Missing type parameter. You can choose between easy or hard."
         # y_pred should be 0~1 value
         # EASY LOSS
         Logloss = self.loss_fn(y_easy, y_true, reduction='none')
@@ -116,28 +115,3 @@ class TF4CTR(BaseModel):
             hard_loss = hard_loss.sum()
 
         return alpha * easy_loss + (1 - alpha) * hard_loss
-
-    # # Since the AUC is not sensitive to positive and negative samples,
-    # # we tried to remove alpha, which improved the effect
-    # def TFLoss(self, y_easy, y_hard, y_true, c=0.8, gamma=2, alpha=0.25, reduction='mean'):
-    #     assert type is not None, "Missing type parameter. You can choose between easy or hard."
-    #     # y_pred should be 0~1 value
-    #     # EASY LOSS
-    #     Logloss = self.loss_fn(y_easy, y_true, reduction='none')
-    #     p_t = (y_true * y_easy + (1 - y_true) * (1 - y_easy)).detach()
-    #     modulating_factor = (c + p_t) ** gamma
-    #     easy_loss = Logloss * modulating_factor
-    #     # HARD LOSS
-    #     Logloss = self.loss_fn(y_hard, y_true, reduction='none')
-    #     p_t = (y_true * y_hard + (1 - y_true) * (1 - y_hard)).detach()
-    #     modulating_factor = ((2 - c) - p_t) ** gamma
-    #     hard_loss = Logloss * modulating_factor
-    #
-    #     if reduction == 'mean':
-    #         easy_loss =  easy_loss.mean()
-    #         hard_loss = hard_loss.mean()
-    #     elif reduction == 'sum':
-    #         easy_loss = easy_loss.sum()
-    #         hard_loss = hard_loss.sum()
-    #
-    #     return alpha * easy_loss + (1 - alpha) * hard_loss
