@@ -1,5 +1,8 @@
 If you have any questions, feel free to ask!  :)
 # TF4CTR: Twin Focus Framework for CTR Prediction via Adaptive Sample Differentiation
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/tf4ctr-twin-focus-framework-for-ctr/click-through-rate-prediction-on-frappe)](https://paperswithcode.com/sota/click-through-rate-prediction-on-frappe?p=tf4ctr-twin-focus-framework-for-ctr)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/tf4ctr-twin-focus-framework-for-ctr/click-through-rate-prediction-on-movielens-1)](https://paperswithcode.com/sota/click-through-rate-prediction-on-movielens-1?p=tf4ctr-twin-focus-framework-for-ctr)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/tf4ctr-twin-focus-framework-for-ctr/click-through-rate-prediction-on-criteo)](https://paperswithcode.com/sota/click-through-rate-prediction-on-criteo?p=tf4ctr-twin-focus-framework-for-ctr)
 
 ## Model Overview
 ![image](https://github.com/salmon1802/TF4CTR/assets/73091798/a59f32b3-af0a-4bdf-aecb-46ac68b6675b)
