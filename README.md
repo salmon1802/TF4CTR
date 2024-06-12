@@ -38,3 +38,17 @@ Get the result from https://github.com/salmon1802/TF4CTR/tree/main/TF4CTR/TF4CTR
 This implementation is based on FuxiCTR and BARS. Thanks for their sharing and contribution.  
 BARS: https://github.com/openbenchmark  
 FuxiCTR: https://github.com/xue-pai/FuxiCTR
+
+## Citation
+If you find our code helpful for your research, please cite the following paper:
+
+@article{TF4CTR,
+  title={TF4CTR: Twin Focus Framework for CTR Prediction via Adaptive Sample Differentiation},
+  author={Li, Honghao and Zhang, Yiwen and Zhang, Yi and Sang, Lei and Yang, Yun},
+  journal={arXiv preprint arXiv:2405.03167},
+  year={2024}
+}
+
+
+
+
