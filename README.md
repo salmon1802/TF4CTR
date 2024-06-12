@@ -42,12 +42,14 @@ FuxiCTR: https://github.com/xue-pai/FuxiCTR
 ## Citation
 If you find our code helpful for your research, please cite the following paper:
 
+```bibtex
 @article{TF4CTR,
   title={TF4CTR: Twin Focus Framework for CTR Prediction via Adaptive Sample Differentiation},
   author={Li, Honghao and Zhang, Yiwen and Zhang, Yi and Sang, Lei and Yang, Yun},
   journal={arXiv preprint arXiv:2405.03167},
   year={2024}
 }
+```
 
 
 
