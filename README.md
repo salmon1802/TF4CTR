@@ -5,7 +5,7 @@ If you have any questions, feel free to ask!  :)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/tf4ctr-twin-focus-framework-for-ctr/click-through-rate-prediction-on-criteo)](https://paperswithcode.com/sota/click-through-rate-prediction-on-criteo?p=tf4ctr-twin-focus-framework-for-ctr)
 
 ## Model Overview
-![image](https://github.com/salmon1802/TF4CTR/assets/73091798/a59f32b3-af0a-4bdf-aecb-46ac68b6675b)
+![image](https://github.com/user-attachments/assets/7347057f-7801-4f32-92ea-5e3026b1c5e8)
 
 
 
